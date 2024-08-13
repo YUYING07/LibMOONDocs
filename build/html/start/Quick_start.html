@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Overall Framework" href="../guide/Framework.html" />
-    <link rel="prev" title="Installation" href="Installation.html" /> 
+    <link rel="next" title="Overall Framework" href="../guide/Task.html" />
+    <link rel="prev" title="Introduction" href="Introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,21 +46,29 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">GETTING STARTED:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#load-data">Load Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-an-algorithm-and-a-problem">Create an algorithm and a problem</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">USER GUIDE:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/Task.html">Overall Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Framework.html">Overall Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/Benchmark.html">Overall Framework</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide:</span></p>
+<p class="caption" role="heading"><span class="caption-text">DEVELOPER GUIDE:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../develop/New_Dataset.html">Apply to a New Dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../develop/CustomArchitecture.html">Customize an Architecture</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API REFERENCE:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/Libmoon_problem.html">libmoon.problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/Libmoon_metric.html">libmoon.metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/Libmoon_solver.html">libmoon.solver</a></li>
 </ul>
 
         </div>
@@ -79,7 +87,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Quick Start</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/start/Quick_start.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/start/Quick_start.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -89,9 +97,51 @@
              
   <section id="quick-start">
 <h1>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h1>
-<p>We use the ZDT1 in Synthetic dataset as an example to show how to use <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code>. More details and results are provided here.</p>
-<section id="load-data">
-<h2>Load Data<a class="headerlink" href="#load-data" title="Link to this heading"></a></h2>
+<p>In this notebook, we will guide you through the basic steps of using <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># install LibMOO, skip it if you have already installed evox</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">libmoon</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">libmoon</span><span class="o">==</span><span class="mf">0.1.11</span>
+</pre></div>
+</div>
+<p>Here we use the a synthetic problem as an example to show how to use <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code>.</p>
+<p>For more detailed list,  please refer to our API documentation <a class="reference internal" href="Introduction.html"><span class="doc">Supported Benchmark Datasets</span></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import necessary modules</span>
+<span class="kn">from</span> <span class="nn">libmoon.util_global.initialization</span> <span class="kn">import</span> <span class="n">synthetic_init</span>
+<span class="kn">from</span> <span class="nn">libmoon.util_global.weight_factor</span> <span class="kn">import</span> <span class="n">uniform_pref</span>
+<span class="kn">from</span> <span class="nn">libmoon.util_global</span> <span class="kn">import</span> <span class="n">get_problem</span>
+</pre></div>
+</div>
+<section id="create-an-algorithm-and-a-problem">
+<h2>Create an algorithm and a problem<a class="headerlink" href="#create-an-algorithm-and-a-problem" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Example1: Finding a size-K (K=5) Pareto solutions with four lines of code.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">libmoon.solver.gradient.methods</span> <span class="kn">import</span> <span class="n">EPOSolver</span>
+<span class="kn">from</span> <span class="nn">libmoon.util_global.initialization</span> <span class="kn">import</span> <span class="n">synthetic_init</span>
+
+<span class="n">problem</span> <span class="o">=</span> <span class="n">get_problem</span><span class="p">(</span><span class="n">problem_name</span><span class="o">=</span><span class="s1">&#39;ZDT1&#39;</span><span class="p">)</span>
+<span class="n">prefs</span> <span class="o">=</span> <span class="n">uniform_pref</span><span class="p">(</span><span class="n">n_prob</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_obj</span><span class="o">=</span><span class="n">problem</span><span class="o">.</span><span class="n">n_obj</span><span class="p">,</span> <span class="n">clip_eps</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EPOSolver</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">synthetic_init</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">prefs</span><span class="p">),</span> <span class="n">prefs</span><span class="o">=</span><span class="n">prefs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Example2: PSL in a problem with three lines of solving problem and two lines of evaluating the results.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">libmoon.solver.psl.core_psl</span> <span class="kn">import</span> <span class="n">AggPSLSolver</span>
+
+<span class="n">problem</span> <span class="o">=</span> <span class="n">get_problem</span><span class="p">(</span><span class="n">problem_name</span><span class="o">=</span><span class="s1">&#39;ZDT1&#39;</span><span class="p">)</span>
+<span class="c1"># agg list [ ’ls ’, ’tche ’, ’mtche ’, ’pbi ’, ... ]</span>
+<span class="n">prefs</span> <span class="o">=</span> <span class="n">uniform_pref</span><span class="p">(</span><span class="n">n_prob</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_obj</span><span class="o">=</span><span class="n">problem</span><span class="o">.</span><span class="n">n_obj</span><span class="p">,</span> <span class="n">clip_eps</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">AggPSLSolver</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">eval_y</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">Tensor</span><span class="p">(</span><span class="n">prefs</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()))</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -99,8 +149,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../guide/Framework.html" class="btn btn-neutral float-right" title="Overall Framework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../guide/Task.html" class="btn btn-neutral float-right" title="Overall Framework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

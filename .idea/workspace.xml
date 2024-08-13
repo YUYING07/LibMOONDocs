@@ -5,27 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/source/apis/Libmoon_metric.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/guide/Benchmark.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/guide/Task.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/start/Quick_start.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/apis/libmoon_metric.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/apis/libmoon_metric.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/environment.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_metric.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_metric.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/doctrees/start/Quick_start.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/start/Quick_start.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/libmoon_metric.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/libmoon_metric.md.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/libmoon_solver.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/libmoon_solver.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/start/Quick_start.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/start/Quick_start.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_metric.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_metric.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_problem.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_problem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/start/Quick_start.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/start/Quick_start.md.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_metric.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_solver.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_solver.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/start/Quick_start.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/start/Quick_start.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/start/Quick_start.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +46,12 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Documents/LibMOONDocs/source/apis"
+    "last_opened_file_path": "D:/Documents/LibMOONDocs/source/guide"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\LibMOONDocs\source\guide" />
       <recent name="D:\Documents\LibMOONDocs\source\apis" />
       <recent name="D:\Documents\LibMOONDocs\source" />
     </key>
@@ -78,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723532376568</updated>
-      <workItem from="1723532377650" duration="14940000" />
+      <workItem from="1723532377650" duration="17545000" />
     </task>
     <servers />
   </component>

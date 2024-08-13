@@ -1,6 +1,0 @@
-# Quick Start
-
-We use the ZDT1 in Synthetic dataset as an example to show how to use `LibMOON`. More details and results are provided here.
-
-## Load Data
-
