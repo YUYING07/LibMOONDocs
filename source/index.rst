@@ -29,8 +29,10 @@ LibMOON: A Gradient-based MultiObjective OptimizatioN Library in PyTorch
    develop/*
 
 .. toctree::
-   :maxdepth: 3
-   :caption: API REFERENCE:
-   :glob:
+    :maxdepth: 4
+    :caption: API REFERENCE:
+    :glob:
 
-    apis/*
+    apis/Libmoon_problem
+    apis/Libmoon_metric
+    apis/Libmoon_solver
