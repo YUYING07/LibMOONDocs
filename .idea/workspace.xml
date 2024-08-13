@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/qq.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.readthedocs.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.readthedocs.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/Installation.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/Installation.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/Introduction.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/Introduction.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Installation.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Installation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/Introduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/Introduction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Installation.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Installation.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/Introduction.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/Introduction.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Installation.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Installation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/Introduction.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/index.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,16 +40,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/LibMOONDocs/source&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Documents/LibMOONDocs/source"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\LibMOONDocs\source" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\LibMOONDocs\assets" />
+      <recent name="D:\Documents\LibMOONDocs\img" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -52,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723532376568</updated>
-      <workItem from="1723532377650" duration="1716000" />
+      <workItem from="1723532377650" duration="8150000" />
     </task>
     <servers />
   </component>

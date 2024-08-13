@@ -46,7 +46,15 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">GETTING STARTED:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#supported-benchmark-datasets">Supported Benchmark Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-algorithms">Supported Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contact-us">Contact Us</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advisory-board">Advisory Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#correspondence">Correspondence</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Quick_start.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Framework.html">Overall Framework</a></li>
@@ -78,6 +86,264 @@
              
   <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> is a multiobjective optimization framework that spans from single-objective optimization to multiobjective
+optimization. It aims to enhance the understanding of optimization problems and facilitate fair comparisons between MOO
+algorithms. A submission to NeurIPS 2024 DB track.</p>
+<section id="supported-benchmark-datasets">
+<h2>Supported Benchmark Datasets<a class="headerlink" href="#supported-benchmark-datasets" title="Link to this heading"></a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Datasets</th>
+<th>Problems</th>
+<th>Project/Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://ieeexplore.ieee.org/document/996017">ZDT</a></td>
+<td>Synthetic</td>
+<td><a href="https://pymoo.org/problems/multi/zdt.html">Project</a></td>
+</tr>
+<tr>
+<td><a href="https://ieeexplore.ieee.org/document/996017">DTLZ</a></td>
+<td>Synthetic</td>
+<td><a href="https://pymoo.org/problems/multi/zdt.html">Project</a></td>
+</tr>
+<tr>
+<td><a href="https://link.springer.com/article/10.1007/s40747-017-0039-7">MAF</a></td>
+<td>Synthetic</td>
+<td><a href="https://pymoo.org/problems/multi/zdt.html">Project</a></td>
+</tr>
+<tr>
+<td><a href="https://ieeexplore.ieee.org/document/996017">WFG</a></td>
+<td>Synthetic</td>
+<td><a href="https://github.com/ryojitanabe/reproblems">Code</a></td>
+</tr>
+<tr>
+<td><a href="https://ieeexplore.ieee.org/document/996017">Fi's</a></td>
+<td>Synthetic</td>
+<td><a href="https://github.com/ryojitanabe/reproblems">Code</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2009.12867">RE</a></td>
+<td>Synthetic</td>
+<td><a href="https://github.com/ryojitanabe/reproblems">Code</a></td>
+</tr>
+<tr>
+<td><a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/685bfde03eb646c27ed565881917c71c-Paper.pdf">MO-MNISTs</a></td>
+<td>Multitask Learning</td>
+<td><a href="https://github.com/ruchtem/cosmos">COSMOS</a></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/pdf/2103.13392">Fairness Classification  </a></td>
+<td>Multitask Learning</td>
+<td><a href="https://github.com/ruchtem/cosmos">COSMOS</a></td>
+</tr>
+<tr>
+<td><a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/7cb2c2a8d35576c00078b6591ec26a7d-Paper.pdf">Federated Learning</a></td>
+<td>Multitask Learning</td>
+<td><a href="https://github.com/ruchtem/cosmos">COSMOS</a></td>
+</tr>
+<tr>
+<td><a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/4a46fbfca3f1465a27b210f4bdfe6ab3-Paper.pdf">Synthetic (DST, FTS...)</a></td>
+<td>Multitask Learning</td>
+<td><a href="https://github.com/sample-repo/envelop-code">Project</a></td>
+</tr>
+<tr>
+<td><a href="https://proceedings.mlr.press/v119/xu20h/xu20h.pdf">Robotics (MO-MuJoCo...)</a></td>
+<td>Multitask Learning</td>
+<td><a href="https://github.com/mit-gfx/PGMORL">Code</a></td>
+</tr>
+</tbody>
+</table></section>
+<section id="supported-algorithms">
+<h2>Supported Algorithms<a class="headerlink" href="#supported-algorithms" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> supports the following algorithms:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Method</th>
+<th>Property</th>
+<th>#Obj</th>
+<th>Support</th>
+<th>Venues</th>
+<th>Complexity</th>
+<th>Arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aggregation fun. based, e.g. Tche,mTche,LS,PBI,...</td>
+<td>Pareto solution with aggregations.</td>
+<td>Any</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+<td><code>GradAggSolver</code></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/pdf/2103.13392">COSMOS</a></td>
+<td>Approximated exact solution.</td>
+<td>Any</td>
+<td>Yes</td>
+<td>ICDM 2021</td>
+<td>$O(m n K )$</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://proceedings.mlr.press/v119/mahapatra20a/mahapatra20a.pdf">EPO</a></td>
+<td>Exact solution.</td>
+<td>Any</td>
+<td>Yes</td>
+<td>ICML 2020</td>
+<td>$O(m^2 n K )$</td>
+<td><code>EPOSolver</code></td>
+</tr>
+<tr>
+<td><a href="https://openreview.net/pdf?id=S2-j0ZegyrE">MOO-SVGD</a></td>
+<td>A set of diverse Pareto solution.</td>
+<td>Any</td>
+<td>Yes</td>
+<td>NeurIPS 2021</td>
+<td>$O(m^2 n K^2 )$</td>
+<td><code>MOO-SVGDSolver (*)</code></td>
+</tr>
+<tr>
+<td><a href="https://proceedings.neurips.cc/paper/2018/file/432aca3a1e345e339f35a30c8f65edce-Paper.pdf">MGDA</a></td>
+<td>Arbitray Pareto solutions. Location affected highly by initialization.</td>
+<td>Any</td>
+<td>Yes</td>
+<td>NeurIPS 2018</td>
+<td>$O(m^2 n K )$</td>
+<td><code>MGDASolver</code></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2402.09492">PMGDA</a></td>
+<td>Pareto solutions satisfying any preference.</td>
+<td>Any</td>
+<td>Yes</td>
+<td>TETCI</td>
+<td>$O(m^2 n K )$</td>
+<td><code>PMGDASolver</code></td>
+</tr>
+<tr>
+<td><a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/685bfde03eb646c27ed565881917c71c-Paper.pdf">PMTL</a></td>
+<td>Pareto solutions in sectors.</td>
+<td>2. 3 is difficult.</td>
+<td>Yes</td>
+<td>NeurIPS 2019</td>
+<td>$O(m^2 n K^2 )$</td>
+<td><code>PMTLSolver</code></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2102.04523">HVGrad </a></td>
+<td>It is a gradient-based HV method.</td>
+<td>2/3</td>
+<td>Yes</td>
+<td>CEC2023</td>
+<td>$O(m^2 n K^2 )$</td>
+<td><code>HVGradSolver</code></td>
+</tr>
+</tbody>
+</table><p>Here, $m$ is the number of objectives, $K$ is the number of samples, and $n$ is the number of decision variables.
+For neural network based methods, $n$ is the number of parameters; hence $n$ is very large (&gt;10000), $K$ is also large (
+e.g., 20-50), while $m$ is small (2.g., 2-4).
+As a result, $m^2$ is not a big problem. $n^2$ is a big problem. $K^2$ is a big problem.</p>
+<p>Time complexity of gradient based methods are as follows,</p>
+<ol class="simple">
+<li><p>Tier 1. GradAggSolver.</p></li>
+<li><p>Tier 2. MGDASolver, EPOSolver, PMTLSolver.</p></li>
+<li><p>Tier 3. GradHVSolver</p></li>
+<li><p>Tier 4. MOOSVGDSolver</p></li>
+</ol>
+<p>Important things to notice:
+The original code MOO-SVGD does not offer a MTL implement. Our code is the first open source code for MTL MOO-SVGD.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th>Problems</th>
+<th>Arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Pareto set learning Solvers</td>
+<td><code>EPO-based PSL</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Pareto set learning Solvers</td>
+<td><code>Agg-based PSL</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Pareto set learning Solvers</td>
+<td><code>PMGDA-based PSL</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Pareto set learning Solvers</td>
+<td><code>Evolutionary-based PSL</code></td>
+</tr>
+<tr>
+<td></td>
+<td>MultiObjective Bayesian Optimization  Solvers</td>
+<td><code>PSL-MONO</code></td>
+</tr>
+<tr>
+<td></td>
+<td>MultiObjective Bayesian Optimization  Solvers</td>
+<td><code>PSL-DirHV-EI</code></td>
+</tr>
+<tr>
+<td></td>
+<td>MultiObjective Bayesian Optimization  Solvers</td>
+<td><code>DirHV-EGO</code></td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2203.02185">HV Net</a></td>
+<td>Machine Learning Pretrained</td>
+<td></td>
+</tr>
+</tbody>
+</table></section>
+<section id="contributors">
+<h2>Contributors<a class="headerlink" href="#contributors" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> is developed by the following contributors:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scholar.google.com/citations?user=KQj18L8AAAAJ&amp;hl=zh-TW">Xiaoyuan Zhang</a> (Maintainer of Pareto set learning,
+gradient-based solver)</p></li>
+<li><p><a class="reference external" href="https://liazhao5.github.io/">Liang Zhao</a> (Maintainer of MOBO)</p></li>
+<li><p><a class="reference external" href="https://xi-l.github.io/">Xi Lin</a></p></li>
+<li><p><a class="reference external" href="https://scholar.google.com/citations?user=nw6-_5wAAAAJ&amp;hl=en">Yingying Yu</a></p></li>
+</ul>
+</section>
+<section id="contact-us">
+<h2>Contact Us<a class="headerlink" href="#contact-us" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>If you have any question or suggestion, please feel free to contact us by raising an issue or sending an email
+to <code class="docutils literal notranslate"><span class="pre">xzhang2523-c&#64;my.cityu.edu.hk</span></code>.</p></li>
+<li><p>QQ Group:</p></li>
+</ul>
+<img src="/assets/img/qq.jpg" width="20%"></section>
+<section id="advisory-board">
+<h2>Advisory Board<a class="headerlink" href="#advisory-board" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Prof. <a class="reference external" href="https://ychen-stat-ml.github.io/">Yifan Chen</a> (Hong Kong Baptist University)</p></li>
+<li><p>Prof. <a class="reference external" href="https://www.cs.cityu.edu.hk/~zhichalu/">Zhichao Lu</a> (City University of Hong Kong)</p></li>
+<li><p>Prof. <a class="reference external" href="https://hanzhaoml.github.io/">Han Zhao</a> (University of Illinois at Urbana-Champaign)</p></li>
+<li><p>Prof. <a class="reference external" href="https://scholar.google.com.hk/citations?user=jFUXL1AAAAAJ&amp;hl=zh-CN">Ke Shang</a> (Shenzhen University)</p></li>
+<li><p>Prof. <a class="reference external" href="https://scholar.google.com/citations?user=Bl4SRU0AAAAJ&amp;hl=zh-CN">Tao Qin</a> (Microsoft Research)</p></li>
+</ul>
+</section>
+<section id="correspondence">
+<h2>Correspondence<a class="headerlink" href="#correspondence" title="Link to this heading"></a></h2>
+<p>For any inquiries, please contact <a class="reference external" href="https://www.cs.cityu.edu.hk/~qzhan7/index.html">Qingfu Zhang</a> (FIEEE, City
+University of Hong Kong) at the corresponding address.</p>
+</section>
 </section>
 
 
