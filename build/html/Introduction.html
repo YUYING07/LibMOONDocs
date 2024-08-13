@@ -49,14 +49,17 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#supported-benchmark-datasets">Supported Benchmark Datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#supported-algorithms">Supported Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#citation">Citation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contributors">Contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#contact-us">Contact Us</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#advisory-board">Advisory Board</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#correspondence">Correspondence</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Quick_start.html">Quick Start</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">USER GUIDE:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Framework.html">Overall Framework</a></li>
 </ul>
 
@@ -262,7 +265,7 @@ The original code MOO-SVGD does not offer a MTL implement. Our code is the first
 <table border="1" class="docutils">
 <thead>
 <tr>
-<th></th>
+<th>Method</th>
 <th>Problems</th>
 <th>Arguments</th>
 </tr>
@@ -310,6 +313,20 @@ The original code MOO-SVGD does not offer a MTL implement. Our code is the first
 </tr>
 </tbody>
 </table></section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading"></a></h2>
+<p>If you find <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> useful for your research or development, please cite the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">libmoon_2024</span><span class="p">,</span>
+  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Zhang</span><span class="p">,</span> <span class="n">Xiaoyuan</span> <span class="ow">and</span> <span class="n">Zhao</span><span class="p">,</span> <span class="n">Liang</span> <span class="ow">and</span> <span class="n">Yu</span><span class="p">,</span> <span class="n">Yingying</span> <span class="ow">and</span> <span class="n">Lin</span><span class="p">,</span> <span class="n">Xi</span> <span class="ow">and</span> <span class="n">Chen</span><span class="p">,</span> <span class="n">Yifan</span> <span class="ow">and</span> <span class="n">Zhao</span><span class="p">,</span> <span class="n">Han</span> <span class="ow">and</span> <span class="n">Zhang</span><span class="p">,</span> <span class="n">Qingfu</span><span class="p">},</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">LibMOON</span><span class="p">:</span> <span class="n">A</span> <span class="n">Gradient</span><span class="o">-</span><span class="n">based</span> <span class="n">MultiObjective</span>
+<span class="n">OptimizatioN</span> <span class="n">Library</span> <span class="ow">in</span> <span class="n">PyTorch</span><span class="p">}},</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">xzhang2523</span><span class="o">/</span><span class="n">libmoon</span><span class="p">},</span>
+  <span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.0.4</span><span class="p">},</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2024</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 <section id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> is developed by the following contributors:</p>
@@ -317,8 +334,8 @@ The original code MOO-SVGD does not offer a MTL implement. Our code is the first
 <li><p><a class="reference external" href="https://scholar.google.com/citations?user=KQj18L8AAAAJ&amp;hl=zh-TW">Xiaoyuan Zhang</a> (Maintainer of Pareto set learning,
 gradient-based solver)</p></li>
 <li><p><a class="reference external" href="https://liazhao5.github.io/">Liang Zhao</a> (Maintainer of MOBO)</p></li>
-<li><p><a class="reference external" href="https://xi-l.github.io/">Xi Lin</a></p></li>
-<li><p><a class="reference external" href="https://scholar.google.com/citations?user=nw6-_5wAAAAJ&amp;hl=en">Yingying Yu</a></p></li>
+<li><p><a class="reference external" href="https://scholar.google.com/citations?user=nw6-_5wAAAAJ&amp;hl=en">Yingying Yu</a> (Software design)</p></li>
+<li><p><a class="reference external" href="https://xi-l.github.io/">Xi Lin</a> (Software design)</p></li>
 </ul>
 </section>
 <section id="contact-us">
@@ -326,23 +343,19 @@ gradient-based solver)</p></li>
 <ul class="simple">
 <li><p>If you have any question or suggestion, please feel free to contact us by raising an issue or sending an email
 to <code class="docutils literal notranslate"><span class="pre">xzhang2523-c&#64;my.cityu.edu.hk</span></code>.</p></li>
-<li><p>QQ Group:</p></li>
 </ul>
-<img src="/assets/img/qq.jpg" width="20%"></section>
+</section>
 <section id="advisory-board">
 <h2>Advisory Board<a class="headerlink" href="#advisory-board" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Prof. <a class="reference external" href="https://ychen-stat-ml.github.io/">Yifan Chen</a> (Hong Kong Baptist University)</p></li>
-<li><p>Prof. <a class="reference external" href="https://www.cs.cityu.edu.hk/~zhichalu/">Zhichao Lu</a> (City University of Hong Kong)</p></li>
+<li><p>Prof. <a class="reference external" href="https://www.cs.cityu.edu.hk/~qzhan7/index.html">Qingfu Zhang</a> (FIEEE, City University of Hong Kong, <strong>Corresponding</strong>)</p></li>
 <li><p>Prof. <a class="reference external" href="https://hanzhaoml.github.io/">Han Zhao</a> (University of Illinois at Urbana-Champaign)</p></li>
+<li><p>Prof. <a class="reference external" href="https://ychen-stat-ml.github.io/">Yifan Chen</a> (Hong Kong Baptist University)</p></li>
 <li><p>Prof. <a class="reference external" href="https://scholar.google.com.hk/citations?user=jFUXL1AAAAAJ&amp;hl=zh-CN">Ke Shang</a> (Shenzhen University)</p></li>
+<li><p>Prof. <a class="reference external" href="https://scholar.google.com/citations?user=3WixDRMAAAAJ&amp;hl=zh-CN">Genghui Li</a> (Shenzhen University)</p></li>
+<li><p>Prof. <a class="reference external" href="https://faculty.sustech.edu.cn/?tagid=wangzk3&amp;iscss=1&amp;snapid=1&amp;orderby=date&amp;go=1&amp;lang=en">Zhenkun Wang</a> (Southern University of Science and Technology)</p></li>
 <li><p>Prof. <a class="reference external" href="https://scholar.google.com/citations?user=Bl4SRU0AAAAJ&amp;hl=zh-CN">Tao Qin</a> (Microsoft Research)</p></li>
 </ul>
-</section>
-<section id="correspondence">
-<h2>Correspondence<a class="headerlink" href="#correspondence" title="Link to this heading"></a></h2>
-<p>For any inquiries, please contact <a class="reference external" href="https://www.cs.cityu.edu.hk/~qzhan7/index.html">Qingfu Zhang</a> (FIEEE, City
-University of Hong Kong) at the corresponding address.</p>
 </section>
 </section>
 

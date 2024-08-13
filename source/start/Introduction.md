@@ -50,7 +50,7 @@ Time complexity of gradient based methods are as follows,
 Important things to notice:
 The original code MOO-SVGD does not offer a MTL implement. Our code is the first open source code for MTL MOO-SVGD.
 
-|                                            | 	Problems	                                    | Arguments                |
+| Method                                     | 	Problems	                                    | Arguments                |
 |--------------------------------------------|-----------------------------------------------|--------------------------|
 |                                            | Pareto set learning Solvers                   | `EPO-based PSL`          |
 |                                            | Pareto set learning Solvers                   | `Agg-based PSL`          |
@@ -61,6 +61,19 @@ The original code MOO-SVGD does not offer a MTL implement. Our code is the first
 |                                            | MultiObjective Bayesian Optimization  Solvers | `DirHV-EGO`              |
 | [HV Net](https://arxiv.org/abs/2203.02185) | Machine Learning Pretrained                   |                          |
 
+## Citation
+If you find `LibMOON` useful for your research or development, please cite the following:
+
+```
+@software{libmoon_2024,
+  author = {Zhang, Xiaoyuan and Zhao, Liang and Yu, Yingying and Lin, Xi and Chen, Yifan and Zhao, Han and Zhang, Qingfu},
+  title = {{LibMOON: A Gradient-based MultiObjective
+OptimizatioN Library in PyTorch}},
+  url = {https://github.com/xzhang2523/libmoon},
+  version = {2.0.4},
+  year = {2024}
+}
+```
 ## Contributors
 
 `LibMOON` is developed by the following contributors:
@@ -68,26 +81,21 @@ The original code MOO-SVGD does not offer a MTL implement. Our code is the first
 - [Xiaoyuan Zhang](https://scholar.google.com/citations?user=KQj18L8AAAAJ&hl=zh-TW) (Maintainer of Pareto set learning,
   gradient-based solver)
 - [Liang Zhao](https://liazhao5.github.io/) (Maintainer of MOBO)
-- [Xi Lin](https://xi-l.github.io/)
-- [Yingying Yu](https://scholar.google.com/citations?user=nw6-_5wAAAAJ&hl=en)
+- [Yingying Yu](https://scholar.google.com/citations?user=nw6-_5wAAAAJ&hl=en) (Software design)
+- [Xi Lin](https://xi-l.github.io/) (Software design)
 
 ## Contact Us
 
 - If you have any question or suggestion, please feel free to contact us by raising an issue or sending an email
   to `xzhang2523-c@my.cityu.edu.hk`.
-- QQ Group:
 
-<img src="/assets/img/qq.jpg" width="20%">
 
 ## Advisory Board
-
-- Prof. [Yifan Chen](https://ychen-stat-ml.github.io/) (Hong Kong Baptist University)
-- Prof. [Zhichao Lu](https://www.cs.cityu.edu.hk/~zhichalu/) (City University of Hong Kong)
+- Prof. [Qingfu Zhang](https://www.cs.cityu.edu.hk/~qzhan7/index.html) (FIEEE, City University of Hong Kong, **Corresponding**)
 - Prof. [Han Zhao](https://hanzhaoml.github.io/) (University of Illinois at Urbana-Champaign)
+- Prof. [Yifan Chen](https://ychen-stat-ml.github.io/) (Hong Kong Baptist University)
 - Prof. [Ke Shang](https://scholar.google.com.hk/citations?user=jFUXL1AAAAAJ&hl=zh-CN) (Shenzhen University)
+- Prof. [Genghui Li](https://scholar.google.com/citations?user=3WixDRMAAAAJ&hl=zh-CN) (Shenzhen University)
+- Prof. [Zhenkun Wang](https://faculty.sustech.edu.cn/?tagid=wangzk3&iscss=1&snapid=1&orderby=date&go=1&lang=en) (Southern University of Science and Technology)
 - Prof. [Tao Qin](https://scholar.google.com/citations?user=Bl4SRU0AAAAJ&hl=zh-CN) (Microsoft Research)
 
-## Correspondence
-
-For any inquiries, please contact [Qingfu Zhang](https://www.cs.cityu.edu.hk/~qzhan7/index.html) (FIEEE, City
-University of Hong Kong) at the corresponding address.
