@@ -18,6 +18,7 @@
         <script src="../_static/documentation_options.js?v=b68717a0"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -54,7 +55,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Task.html">What is Multi-Objective Optimization?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Framework.html">Overall Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guide/Benchmark.html">Run a Benchmark</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">DEVELOPER GUIDE:</span></p>
 <ul>
@@ -64,7 +64,21 @@
 <p class="caption" role="heading"><span class="caption-text">API REFERENCE:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Libmoon_problem.html">libmoon.problem</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">libmoon.metric</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">libmoon.metric</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compute_hv"><code class="docutils literal notranslate"><span class="pre">compute_hv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute_lmin"><code class="docutils literal notranslate"><span class="pre">compute_lmin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute_slmin"><code class="docutils literal notranslate"><span class="pre">compute_slmin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute_spacing"><code class="docutils literal notranslate"><span class="pre">compute_spacing()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute_igd"><code class="docutils literal notranslate"><span class="pre">compute_igd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute_fd"><code class="docutils literal notranslate"><span class="pre">compute_fd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute_pbi"><code class="docutils literal notranslate"><span class="pre">compute_pbi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute_inner_product"><code class="docutils literal notranslate"><span class="pre">compute_inner_product()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">compute_inner_product()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Libmoon_solver.html">libmoon.solver</a></li>
 </ul>
 
@@ -94,76 +108,171 @@
              
   <section id="libmoon-metric">
 <h1>libmoon.metric<a class="headerlink" href="#libmoon-metric" title="Link to this heading"></a></h1>
+<p>Metrics can be divided into two parts, the first part measures the quality of a set of solutions <span class="math notranslate nohighlight">\(\sS = \{ y^{(1)}, \ldots, y^{(N)} \}\)</span>.</p>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute_MMS($str);</span></span></dt>
-<dd><p>the defination</p>
+<dt class="sig sig-object py" id="compute_hv">
+<span class="sig-name descname"><span class="pre">compute_hv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solutions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compute_hv" title="Link to this definition"></a></dt>
+<dd><p>The hypervolume indicator measures the dominated volume by at least one objective belongs to the set <span class="math notranslate nohighlight">\(\sY\)</span> with a reference point <span class="math notranslate nohighlight">\(\vr\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{HV}_\vr = \mathrm{Vol}( \{\vy | \exists \vy' \in \sY, \vy' \preceq \vy \preceq \vr \} ).
+\end{align*}\]</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>string</strong> -- $str</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>string</p>
+<dd class="field-odd"><p><strong>solutions</strong> (<em>list</em>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute_soft_MMS($str);</span></span></dt>
-<dd><p>the defination</p>
+<dt class="sig sig-object py" id="compute_lmin">
+<span class="sig-name descname"><span class="pre">compute_lmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solutions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compute_lmin" title="Link to this definition"></a></dt>
+<dd><p>Minimal distance indicator <span class="math notranslate nohighlight">\((l_{\min})\)</span>, which measures the minimal pairwise distances among all objectives.</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\mathrm{l}_{\min} = \min_{1 &lt; i &lt; j &lt; N} \rho(y^{(i)}, y^{(j)}),
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> denotes the Euclidean distance.
+:param list solutions:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compute_slmin">
+<span class="sig-name descname"><span class="pre">compute_slmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solutions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compute_slmin" title="Link to this definition"></a></dt>
+<dd><p>Soft minimal distance indicator }, which serves as the “soft-min” version of the minimal distance function</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+\mathrm{sl}_{\min} = -\frac{1}{hN(N-1)} \log \left( \sum_{1 &lt; i &lt; j &lt; N} \exp\left(-h \rho\left(y^{(i)}, y^{(j)}\right)\right) \right).
+\end{equation}\]</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>string</strong> -- $str</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>string</p>
+<dd class="field-odd"><p><strong>solutions</strong> (<em>list</em>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute_spacing($str);</span></span></dt>
-<dd><p>the defination</p>
+<dt class="sig sig-object py" id="compute_spacing">
+<span class="sig-name descname"><span class="pre">compute_spacing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solutions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compute_spacing" title="Link to this definition"></a></dt>
+<dd><p>Spacing indicator is supposed to be small, which indicates that objectives vectors are uniformly distributed. Spacing indicator is defined as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+\mathrm{spacing} = \frac{1}{N} \sum_{i=1}^N (d_i - \bar{d})^2, \qquad \bar{d} = \frac{1}{N} \sum_{i=1}^N d_i, \qquad d_i = \min_{i \neq j} \rho(y^{(i)}, y^{(j)}).
+\end{equation}\]</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>string</strong> -- $str</p>
+<dd class="field-odd"><p><strong>solutions</strong> (<em>list</em>)</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>string</p>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For IGD and FD, these two indicators rely that the true Pareto front <span class="math notranslate nohighlight">\(Z\)</span> is known.
+And for the second part of indicators, these indicators measure the quality of a single solution <span class="math notranslate nohighlight">\(y\)</span> with a given preference vector <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="compute_igd">
+<span class="sig-name descname"><span class="pre">compute_igd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solutions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compute_igd" title="Link to this definition"></a></dt>
+<dd><p>Inverted(GD) indicator indicator, measuring the average distance</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+\operatorname{IGD}(\sS)= \frac{1}{|\sZ|}\left( \sum_{i=1}^{|\sZ|} \min_{y' \in \sZ} \rho(y^{(i)}, y') ^{2} \right)^{1/2},
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sZ\)</span> is a reference set</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solutions</strong> (<em>list</em>)</p></li>
+<li><p><strong>Z</strong> (<em>list</em>)</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute_sparsity_mit($str);</span></span></dt>
-<dd><p>the defination</p>
+<dt class="sig sig-object py" id="compute_fd">
+<span class="sig-name descname"><span class="pre">compute_fd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solutions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compute_fd" title="Link to this definition"></a></dt>
+<dd><p>Fill Distance(FD) is the covering radius of a set of solutions:math:<cite>sS</cite></p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+\mathrm{FD}(\sA) = \max_{y' \in \sZ} \min_{y \in \sA} \rho(y, y').
+\end{equation}\]</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>string</strong> -- $str</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solutions</strong> (<em>list</em>)</p></li>
+<li><p><strong>Z</strong> (<em>list</em>)</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>string</p>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the following part, we introduce indicators related to preference vectors <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="compute_pbi">
+<span class="sig-name descname"><span class="pre">compute_pbi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\lambda</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compute_pbi" title="Link to this definition"></a></dt>
+<dd><p>The Penalty-based Intersection (PBI) indicator, which represents a weighted sum of distance functions <span class="math notranslate nohighlight">\(d_1`$\)</span> and $d_2$. It is given by <span class="math notranslate nohighlight">\(\mathrm{PBI} = d_1 + \mu d_2\)</span>, where</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+d_1 = \frac{\langle y - z, \lambda \rangle}{\norm{\lambda}}, \qquad d_2 = \norm{y - (d_1\lambda + z)}.
+\end{equation}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>list</em>)</p></li>
+<li><p><strong>lambda</strong> (<em>list</em>)</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="compute_inner_product">
+<span class="sig-name descname"><span class="pre">compute_inner_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\lambda</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compute_inner_product" title="Link to this definition"></a></dt>
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute_hv($str);</span></span></dt>
-<dd><p>the defination</p>
+<span class="sig-name descname"><span class="pre">The</span> <span class="pre">inner</span> <span class="pre">product</span> <span class="pre">indicator,</span></span></dt>
+<dd><div class="math notranslate nohighlight">
+\[\begin{equation}
+\mathrm{Ip} = \langle y, \lambda \rangle,
+\end{equation}\]</div>
+<p>measures the alignment of objective <span class="math notranslate nohighlight">\(y`$\)</span> with preference vector <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>string</strong> -- $str</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>string</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>list</em>)</p></li>
+<li><p><strong>lambda</strong> (<em>list</em>)</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">compute_inner_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\lambda</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">The</span> <span class="pre">inner</span> <span class="pre">product</span> <span class="pre">indicator,</span></span></dt>
+<dd><div class="math notranslate nohighlight">
+\[\begin{equation}
+\mathrm{Ip} = \langle y, \lambda \rangle,
+\end{equation}\]</div>
+<p>measures the alignment of objective <span class="math notranslate nohighlight">\(y`$\)</span> with preference vector <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>list</em>)</p></li>
+<li><p><strong>lambda</strong> (<em>list</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 </section>
 
 

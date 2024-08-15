@@ -1,38 +1,137 @@
 ================
 libmoon.metric
 ================
+Metrics can be divided into two parts, the first part measures the quality of a set of solutions :math:`\sS = \{ y^{(1)}, \ldots, y^{(N)} \}`.
 
-.. py:function:: compute_MMS($str);
+Functions
+=========
 
-  the defination
+.. py:function:: compute_hv(solutions)
 
-  :param string: $str
-  :rtype: string
+    The hypervolume indicator measures the dominated volume by at least one objective belongs to the set :math:`\sY` with a reference point :math:`\vr`.
 
-.. py:function:: compute_soft_MMS($str);
+    .. math::
 
-    the defination
+        \begin{align*}
+        \mathrm{HV}_\vr = \mathrm{Vol}( \{\vy | \exists \vy' \in \sY, \vy' \preceq \vy \preceq \vr \} ).
+        \end{align*}
 
-    :param string: $str
-    :rtype: string
+    :param list solutions:
 
-.. py:function:: compute_spacing($str);
+.. py:function:: compute_lmin(solutions)
 
-    the defination
+    Minimal distance indicator :math:`(l_{\min})`, which measures the minimal pairwise distances among all objectives.
 
-    :param string: $str
-    :rtype: string
+    .. math::
 
-.. py:function:: compute_sparsity_mit($str);
+        \begin{align*}
+        \mathrm{l}_{\min} = \min_{1 < i < j < N} \rho(y^{(i)}, y^{(j)}),
+        \end{align*}
 
-    the defination
+    where :math:`\rho` denotes the Euclidean distance.
+    :param list solutions:
 
-    :param string: $str
-    :rtype: string
+.. py:function:: compute_slmin(solutions)
 
-.. py:function:: compute_hv($str);
+    Soft minimal distance indicator }, which serves as the “soft-min” version of the minimal distance function
 
-    the defination
+    .. math::
 
-    :param string: $str
-    :rtype: string
+        \begin{equation}
+        \mathrm{sl}_{\min} = -\frac{1}{hN(N-1)} \log \left( \sum_{1 < i < j < N} \exp\left(-h \rho\left(y^{(i)}, y^{(j)}\right)\right) \right).
+        \end{equation}
+
+    :param list solutions:
+
+.. py:function:: compute_spacing(solutions)
+
+    Spacing indicator is supposed to be small, which indicates that objectives vectors are uniformly distributed. Spacing indicator is defined as follows
+
+    .. math::
+        \begin{equation}
+        \mathrm{spacing} = \frac{1}{N} \sum_{i=1}^N (d_i - \bar{d})^2, \qquad \bar{d} = \frac{1}{N} \sum_{i=1}^N d_i, \qquad d_i = \min_{i \neq j} \rho(y^{(i)}, y^{(j)}).
+        \end{equation}
+
+    :param list solutions:
+
+
+.. note::
+
+    For IGD and FD, these two indicators rely that the true Pareto front :math:`Z` is known.
+    And for the second part of indicators, these indicators measure the quality of a single solution :math:`y` with a given preference vector :math:`\lambda`.
+
+.. py:function:: compute_igd(solutions, Z)
+
+    Inverted(GD) indicator indicator, measuring the average distance
+
+    .. math::
+
+        \begin{align*}
+        \operatorname{IGD}(\sS)= \frac{1}{|\sZ|}\left( \sum_{i=1}^{|\sZ|} \min_{y' \in \sZ} \rho(y^{(i)}, y') ^{2} \right)^{1/2},
+        \end{align*}
+
+    where :math:`\sZ` is a reference set
+
+    :param list solutions:
+    :param list Z:
+
+
+.. py:function:: compute_fd(solutions, Z)
+
+    Fill Distance(FD) is the covering radius of a set of solutions:math:`\sS`
+
+    .. math::
+
+        \begin{equation}
+        \mathrm{FD}(\sA) = \max_{y' \in \sZ} \min_{y \in \sA} \rho(y, y').
+        \end{equation}
+
+    :param list solutions:
+    :param list Z:
+
+
+.. note::
+
+   In the following part, we introduce indicators related to preference vectors :math:`\lambda`:
+
+
+.. py:function:: compute_pbi(y, \lambda)
+
+    The Penalty-based Intersection (PBI) indicator, which represents a weighted sum of distance functions :math:`d_1`$` and $d_2$. It is given by :math:`\mathrm{PBI} = d_1 + \mu d_2`, where
+
+    .. math::
+
+        \begin{equation}
+        d_1 = \frac{\langle y - z, \lambda \rangle}{\norm{\lambda}}, \qquad d_2 = \norm{y - (d_1\lambda + z)}.
+        \end{equation}
+
+    :param list y:
+    :param list \lambda:
+
+.. py:function:: compute_inner_product(y, \lambda)
+    The inner product indicator,
+
+    .. math::
+        \begin{equation}
+        \mathrm{Ip} = \langle y, \lambda \rangle,
+        \end{equation}
+
+    measures the alignment of objective :math:`y`$` with preference vector :math:`\lambda`.
+
+    :param list y:
+    :param list \lambda:
+
+.. py:function:: compute_cross_angle(y, \lambda)
+    TFor bi-objective problems, the cross angle indicator,
+
+    .. math::
+        \begin{equation}
+        \mathrm{Ip} = \langle y, \lambda \rangle,
+        \end{equation}
+
+    measures the alignment of objective :math:`y`$` with preference vector :math:`\lambda`.
+
+    :param list y:
+    :param list \lambda:
+
+
