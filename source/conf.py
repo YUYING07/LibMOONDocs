@@ -23,7 +23,7 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 language = 'zh_en'
-
+numfig = True
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
