@@ -293,8 +293,6 @@ ZDT
 
     .. py:method:: __init__(self, n_var=30, n_obj=2, lbound=np.zeros(30), ubound=np.ones(30)
 
-       Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997
-
     .. py:method:: _evaluate_torch(self, x)
 
     .. py:method:: _evaluate_numpy(self, x)
@@ -311,8 +309,6 @@ ZDT
 
         .. py:method:: __init__(self, n_var=30, n_obj=2, lbound=np.zeros(30), ubound=np.ones(30)
 
-        Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997
-
         .. py:method:: _evaluate_torch(self, x)
 
         .. py:method:: _evaluate_numpy(self, x)
@@ -325,8 +321,6 @@ ZDT
         Base: ``BaseMOP``
 
         .. py:method:: __init__(self, n_var=30, n_obj=2, lbound=np.zeros(30), ubound=np.ones(30)
-
-        Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997
 
         .. py:method:: _evaluate_torch(self, x)
 
@@ -341,8 +335,6 @@ ZDT
 
             .. py:method:: __init__(self, n_var=10, n_obj=2, lbound=np.zeros(10), ubound=np.ones(10)
 
-            Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997
-
             .. py:method:: _evaluate_torch(self, x)
 
             .. py:method:: _evaluate_numpy(self, x)
@@ -355,8 +347,6 @@ ZDT
             Base: ``BaseMOP``
 
             .. py:method:: __init__(self, n_var=30, n_obj=2, lbound=np.zeros(30), ubound=np.ones(30)
-
-            Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997
 
             .. py:method:: _evaluate_torch(self, x)
 
