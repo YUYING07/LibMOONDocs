@@ -56,6 +56,7 @@ libmoon.solver
 
 
 .. py:class::  MGDAUBSolver
+
     Base: ``GradBaseSolver``
 
     MGDAUBSolver, published in:

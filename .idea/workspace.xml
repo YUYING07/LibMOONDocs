@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/start/Introduction.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/start/Introduction.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/_sources/start/Introduction.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/start/Introduction.md.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/start/Introduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/start/Introduction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/start/Introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/start/Introduction.md" afterDir="false" />
-    </list>
+    <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +60,7 @@
       <updated>1723532376568</updated>
       <workItem from="1723532377650" duration="17760000" />
       <workItem from="1723621492588" duration="9370000" />
-      <workItem from="1723730962933" duration="17229000" />
+      <workItem from="1723730962933" duration="17276000" />
     </task>
     <servers />
   </component>
