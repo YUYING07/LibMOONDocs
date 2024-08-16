@@ -69,6 +69,31 @@
 <li class="toctree-l3"><a class="reference internal" href="#GradBaseSolver.solve"><code class="docutils literal notranslate"><span class="pre">GradBaseSolver.solve()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#GradAggSolver"><code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#GradAggSolver.__init__"><code class="docutils literal notranslate"><span class="pre">GradAggSolver.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GradAggSolver.solve"><code class="docutils literal notranslate"><span class="pre">GradAggSolver.solve()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#EPOSolver"><code class="docutils literal notranslate"><span class="pre">EPOSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#EPOSolver.solve"><code class="docutils literal notranslate"><span class="pre">EPOSolver.solve()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#MGDAUBSolver"><code class="docutils literal notranslate"><span class="pre">MGDAUBSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MGDAUBSolver.solve"><code class="docutils literal notranslate"><span class="pre">MGDAUBSolver.solve()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#PMGDASolver"><code class="docutils literal notranslate"><span class="pre">PMGDASolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#PMGDASolver.solve"><code class="docutils literal notranslate"><span class="pre">PMGDASolver.solve()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#PMTLSolver"><code class="docutils literal notranslate"><span class="pre">PMTLSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#PMTLSolver.solve"><code class="docutils literal notranslate"><span class="pre">PMTLSolver.solve()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#HVGradSolver"><code class="docutils literal notranslate"><span class="pre">HVGradSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#HVGradSolver.solve"><code class="docutils literal notranslate"><span class="pre">HVGradSolver.solve()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -130,6 +155,117 @@
 </dd>
 </dl>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GradAggSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GradAggSolver</span></span><a class="headerlink" href="#GradAggSolver" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">GradBaseSolver</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GradAggSolver.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agg_fun</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GradAggSolver.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem</strong> (<em>str</em>) -- Existing problems or the given n_obj.</p></li>
+<li><p><strong>agg_fun</strong> (<em>str</em>) -- agg_fun from ls, mtche, tche, pbi, cosmos, invagg, softtche, softmtche</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GradAggSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GradAggSolver.solve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="EPOSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EPOSolver</span></span><a class="headerlink" href="#EPOSolver" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">GradBaseSolver</span></code></p>
+<p>EPOSolver, published in:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://proceedings.mlr.press/v119/mahapatra20a.html">&quot;Multi-Task Learning with User Preferences: Gradient Descent with Controlled Ascent in Pareto Optimization&quot;</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/2010.06313">&quot;Controllable Pareto Multi-Task Learning&quot;</a></p></li>
+</ol>
+<dl class="py method">
+<dt class="sig sig-object py" id="EPOSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#EPOSolver.solve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">MOO-SVGDSolver</span></span></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">GradBaseSolver</span></code></p>
+<p>MOO-SVGDSolver, published in:
+<a href="#id1"><span class="problematic" id="id2">`Profiling Pareto Front With Multi-Objective Stein Variational Gradient Descent&lt;https://openreview.net/pdf?id=S2-j0ZegyrE&gt;`_</span></a>
+.. py:method:: solve(self, x, prefs, problem, n_prob, n_obj)</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param int n_obj<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of objectives.</p>
+</dd>
+<dt class="field-even">param float n_prob<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of problems.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="MGDAUBSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MGDAUBSolver</span></span><a class="headerlink" href="#MGDAUBSolver" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Base:</span> <span class="pre">``GradBaseSolver``</span></span></dt>
+<dd><p>MGDAUBSolver, published in:</p>
+<ol class="arabic simple">
+<li><p><a href="#id3"><span class="problematic" id="id4">`&quot;Multiple-gradient descent algorithm (MGDA) for multiobjective optimizationAlgorithme de descente à gradients multiples pour lʼoptimisation multiobjectif&quot;&lt;https://www.sciencedirect.com/science/article/pii/S1631073X12000738&gt;`_</span></a></p></li>
+<li><p><a href="#id5"><span class="problematic" id="id6">`&quot;Multi-task learning as multimnist-objective optimization.&quot;&lt;https://arxiv.org/abs/1810.04650&gt;`_</span></a></p></li>
+</ol>
+<dl class="py method">
+<dt class="sig sig-object py" id="MGDAUBSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MGDAUBSolver.solve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PMGDASolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PMGDASolver</span></span><a class="headerlink" href="#PMGDASolver" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">GradBaseSolver</span></code></p>
+<p>PMGDASolver, published in:</p>
+<p><a href="#id7"><span class="problematic" id="id8">`&quot;PMGDA: A Preference-based Multiple Gradient Descent Algorithm.&quot;&lt;https://arxiv.org/abs/2402.09492&gt;`_</span></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="PMGDASolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PMGDASolver.solve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PMTLSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PMTLSolver</span></span><a class="headerlink" href="#PMTLSolver" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">GradBaseSolver</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="PMTLSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PMTLSolver.solve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="HVGradSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HVGradSolver</span></span><a class="headerlink" href="#HVGradSolver" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">GradBaseSolver</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="HVGradSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HVGradSolver.solve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
