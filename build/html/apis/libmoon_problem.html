@@ -54,7 +54,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Task.html">What is Multi-Objective Optimization?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Framework.html">Overall Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guide/Benchmark.html">Run a Benchmark</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">DEVELOPER GUIDE:</span></p>
 <ul>
@@ -63,7 +62,160 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API REFERENCE:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">libmoon.problem</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">libmoon.problem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basemop">BaseMOP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#BaseMOP"><code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BaseMOP.__init__"><code class="docutils literal notranslate"><span class="pre">BaseMOP.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BaseMOP.get_number_variable"><code class="docutils literal notranslate"><span class="pre">BaseMOP.get_number_variable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BaseMOP.get_number_objective"><code class="docutils literal notranslate"><span class="pre">BaseMOP.get_number_objective()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BaseMOP.get_number_constraint"><code class="docutils literal notranslate"><span class="pre">BaseMOP.get_number_constraint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BaseMOP.get_lbound"><code class="docutils literal notranslate"><span class="pre">BaseMOP.get_lbound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BaseMOP.get_ubound"><code class="docutils literal notranslate"><span class="pre">BaseMOP.get_ubound()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dtlz">DTLZ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#DTLZ1"><code class="docutils literal notranslate"><span class="pre">DTLZ1</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ1.__init__"><code class="docutils literal notranslate"><span class="pre">DTLZ1.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#DTLZ2"><code class="docutils literal notranslate"><span class="pre">DTLZ2</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ2.__init__"><code class="docutils literal notranslate"><span class="pre">DTLZ2.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ2._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">DTLZ2._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ2._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">DTLZ2._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#DTLZ3"><code class="docutils literal notranslate"><span class="pre">DTLZ3</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ3.__init__"><code class="docutils literal notranslate"><span class="pre">DTLZ3.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ3._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">DTLZ3._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ3._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">DTLZ3._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#DTLZ4"><code class="docutils literal notranslate"><span class="pre">DTLZ4</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ4.__init__"><code class="docutils literal notranslate"><span class="pre">DTLZ4.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ4._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">DTLZ4._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#DTLZ4._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">DTLZ4._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#maf1">MAF1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MAF1"><code class="docutils literal notranslate"><span class="pre">MAF1</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MAF1.__init__"><code class="docutils literal notranslate"><span class="pre">MAF1.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MAF1._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">MAF1._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MAF1._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">MAF1._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#re">RE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#RE21"><code class="docutils literal notranslate"><span class="pre">RE21</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE21.__init__"><code class="docutils literal notranslate"><span class="pre">RE21.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE21._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE21._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE21._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE21._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#RE22"><code class="docutils literal notranslate"><span class="pre">RE22</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE22.__init__"><code class="docutils literal notranslate"><span class="pre">RE22.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE22._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE22._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE22._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE22._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#RE23"><code class="docutils literal notranslate"><span class="pre">RE23</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE23.__init__"><code class="docutils literal notranslate"><span class="pre">RE23.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE23._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE23._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE23._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE23._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#RE24"><code class="docutils literal notranslate"><span class="pre">RE24</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE24.__init__"><code class="docutils literal notranslate"><span class="pre">RE24.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE24._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE24._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE24._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE24._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#RE25"><code class="docutils literal notranslate"><span class="pre">RE25</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE25.__init__"><code class="docutils literal notranslate"><span class="pre">RE25.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE25._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE25._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE25._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE25._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#RE31"><code class="docutils literal notranslate"><span class="pre">RE31</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE31.__init__"><code class="docutils literal notranslate"><span class="pre">RE31.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE31._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE31._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE31._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE31._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#RE37"><code class="docutils literal notranslate"><span class="pre">RE37</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE37.__init__"><code class="docutils literal notranslate"><span class="pre">RE37.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE37._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE37._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE37._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE37._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#RE41"><code class="docutils literal notranslate"><span class="pre">RE41</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE41.__init__"><code class="docutils literal notranslate"><span class="pre">RE41.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE41._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE41._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE41._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE41._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#RE42"><code class="docutils literal notranslate"><span class="pre">RE42</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#RE42.__init__"><code class="docutils literal notranslate"><span class="pre">RE42.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE42._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">RE42._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#RE42._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">RE42._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vlmop">VLMOP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#VLMOP1"><code class="docutils literal notranslate"><span class="pre">VLMOP1</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#VLMOP1.__init__"><code class="docutils literal notranslate"><span class="pre">VLMOP1.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#VLMOP1._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">VLMOP1._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#VLMOP1._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">VLMOP1._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#VLMOP2"><code class="docutils literal notranslate"><span class="pre">VLMOP2</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#VLMOP2.__init__"><code class="docutils literal notranslate"><span class="pre">VLMOP2.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#VLMOP2._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">VLMOP2._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#VLMOP2._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">VLMOP2._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#zdt">ZDT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ZDT1"><code class="docutils literal notranslate"><span class="pre">ZDT1</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT1.__init__"><code class="docutils literal notranslate"><span class="pre">ZDT1.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT1._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">ZDT1._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT1._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">ZDT1._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ZDT2"><code class="docutils literal notranslate"><span class="pre">ZDT2</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT2.__init__"><code class="docutils literal notranslate"><span class="pre">ZDT2.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT2._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">ZDT2._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT2._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">ZDT2._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ZDT3"><code class="docutils literal notranslate"><span class="pre">ZDT3</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT3.__init__"><code class="docutils literal notranslate"><span class="pre">ZDT3.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT3._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">ZDT3._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT3._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">ZDT3._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ZDT4"><code class="docutils literal notranslate"><span class="pre">ZDT4</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT4.__init__"><code class="docutils literal notranslate"><span class="pre">ZDT4.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT4._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">ZDT4._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT4._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">ZDT4._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ZDT6"><code class="docutils literal notranslate"><span class="pre">ZDT6</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT6.__init__"><code class="docutils literal notranslate"><span class="pre">ZDT6.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT6._evaluate_torch"><code class="docutils literal notranslate"><span class="pre">ZDT6._evaluate_torch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ZDT6._evaluate_numpy"><code class="docutils literal notranslate"><span class="pre">ZDT6._evaluate_numpy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Libmoon_metric.html">libmoon.metric</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Libmoon_solver.html">libmoon.solver</a></li>
 </ul>
@@ -84,7 +236,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">libmoon.problem</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/apis/Libmoon_problem.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/apis/Libmoon_problem.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -94,6 +246,570 @@
              
   <section id="libmoon-problem">
 <h1>libmoon.problem<a class="headerlink" href="#libmoon-problem" title="Link to this heading"></a></h1>
+<section id="basemop">
+<h2>BaseMOP<a class="headerlink" href="#basemop" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="BaseMOP">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseMOP</span></span><a class="headerlink" href="#BaseMOP" title="Link to this definition"></a></dt>
+<dd><p>Base: object</p>
+<p>This base class has the following functions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BaseMOP.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BaseMOP.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the problem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_var</strong> (<em>int</em>) -- Number of variables.</p></li>
+<li><p><strong>n_obj</strong> (<em>int</em>) -- Number of objectives.</p></li>
+<li><p><strong>lbound</strong> (<em>ndarray</em>) -- The lower bound array.</p></li>
+<li><p><strong>ubound</strong> (<em>ndarray</em>) -- The upper bound array.</p></li>
+<li><p><strong>n_cons</strong> (<em>int</em>) -- Number of constraint functions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BaseMOP.get_number_variable">
+<span class="sig-name descname"><span class="pre">get_number_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BaseMOP.get_number_variable" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>n_var.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BaseMOP.get_number_objective">
+<span class="sig-name descname"><span class="pre">get_number_objective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BaseMOP.get_number_objective" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>n_obj.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BaseMOP.get_number_constraint">
+<span class="sig-name descname"><span class="pre">get_number_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BaseMOP.get_number_constraint" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>n_cons.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BaseMOP.get_lbound">
+<span class="sig-name descname"><span class="pre">get_lbound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BaseMOP.get_lbound" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>lbound.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BaseMOP.get_ubound">
+<span class="sig-name descname"><span class="pre">get_ubound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BaseMOP.get_ubound" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ubound.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="dtlz">
+<h2>DTLZ<a class="headerlink" href="#dtlz" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="DTLZ1">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DTLZ1</span></span><a class="headerlink" href="#DTLZ1" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<p>Synthetic DTLZ dataset from <a class="reference external" href="https://link.springer.com/chapter/10.1007/1-84628-137-7_6">&quot;Scalable test problems for evolutionary multiobjectiveoptimization, Evolutionary multiobjective Optimization.&quot;</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ1.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(30)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ1.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the DTLZ1 problem.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="DTLZ2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DTLZ2</span></span><a class="headerlink" href="#DTLZ2" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ2.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(30)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ2.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the DTLZ2 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ2._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ2._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ2._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ2._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="DTLZ3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DTLZ3</span></span><a class="headerlink" href="#DTLZ3" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ3.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(30)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ3.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the DTLZ3 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ3._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ3._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ3._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ3._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="DTLZ4">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DTLZ4</span></span><a class="headerlink" href="#DTLZ4" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ4.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(30)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ4.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the DTLZ4 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ4._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ4._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="DTLZ4._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ4._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="maf1">
+<h2>MAF1<a class="headerlink" href="#maf1" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="MAF1">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MAF1</span></span><a class="headerlink" href="#MAF1" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<p>Synthetic MAF1 dataset from <a class="reference external" href="https://colab.ws/articles/10.1007%2Fs40747-017-0039-7">&quot;A benchmark test suite for evolutionary many-objective optimization.&quot;</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="MAF1.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(30)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MAF1.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the MAF1 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MAF1._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MAF1._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MAF1._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MAF1._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="re">
+<h2>RE<a class="headerlink" href="#re" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="RE21">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE21</span></span><a class="headerlink" href="#RE21" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<p>Synthetic RE dataset from <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1568494620300181">&quot;An easy-to-use real-world multi-objective optimization problem suite.&quot;</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE21.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(4)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE21.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE21 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE21._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE21._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE21._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE21._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RE22">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE22</span></span><a class="headerlink" href="#RE22" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE22.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(3)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(3)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE22.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE22 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE22._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE22._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE22._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE22._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RE23">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE23</span></span><a class="headerlink" href="#RE23" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE23.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(4)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE23.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE23 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE23._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE23._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE23._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE23._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RE24">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE24</span></span><a class="headerlink" href="#RE24" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE24.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(2)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE24.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE24 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE24._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE24._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE24._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE24._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RE25">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE25</span></span><a class="headerlink" href="#RE25" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE25.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(3)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(3)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE25.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE25 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE25._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE25._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE25._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE25._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RE31">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE31</span></span><a class="headerlink" href="#RE31" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE31.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(3)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(3)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE31.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE31 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE31._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE31._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE31._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE31._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RE37">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE37</span></span><a class="headerlink" href="#RE37" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE37.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(3)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE37.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE37 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE37._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE37._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE37._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE37._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RE41">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE41</span></span><a class="headerlink" href="#RE41" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE41.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(3)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE41.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE41 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE41._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE41._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE41._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE41._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RE42">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE42</span></span><a class="headerlink" href="#RE42" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RE42.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(3)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE42.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the RE41 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE42._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE42._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RE42._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE42._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="vlmop">
+<h2>VLMOP<a class="headerlink" href="#vlmop" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="VLMOP1">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VLMOP1</span></span><a class="headerlink" href="#VLMOP1" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<p>Synthetic VLMOP dataset from <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-642-59132-7_26">&quot;Distributed Multiobjective Optimization Problems and Methods for their Solution.&quot;</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="VLMOP1.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(10)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#VLMOP1.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the VLMOP1 problem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="VLMOP1._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#VLMOP1._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="VLMOP1._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#VLMOP1._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="VLMOP2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VLMOP2</span></span><a class="headerlink" href="#VLMOP2" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="VLMOP2.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(10)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#VLMOP2.__init__" title="Link to this definition"></a></dt>
+<dd><p>Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="VLMOP2._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#VLMOP2._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="VLMOP2._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#VLMOP2._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="zdt">
+<h2>ZDT<a class="headerlink" href="#zdt" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ZDT1">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZDT1</span></span><a class="headerlink" href="#ZDT1" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<p>Synthetic ZDT dataset from <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1568494620300181">&quot;An easy-to-use real-world multi-objective optimization problem suite&quot;</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT1.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT1.__init__" title="Link to this definition"></a></dt>
+<dd><p>Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT1._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT1._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT1._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT1._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ZDT2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZDT2</span></span><a class="headerlink" href="#ZDT2" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT2.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT2.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT2._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT2._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT2._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT2._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ZDT3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZDT3</span></span><a class="headerlink" href="#ZDT3" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT3.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT3.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT3._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT3._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT3._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT3._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ZDT4">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZDT4</span></span><a class="headerlink" href="#ZDT4" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT4.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(10)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT4.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT4._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT4._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT4._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT4._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ZDT6">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZDT6</span></span><a class="headerlink" href="#ZDT6" title="Link to this definition"></a></dt>
+<dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT6.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT6.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT6._evaluate_torch">
+<span class="sig-name descname"><span class="pre">_evaluate_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT6._evaluate_torch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ZDT6._evaluate_numpy">
+<span class="sig-name descname"><span class="pre">_evaluate_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT6._evaluate_numpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
 
