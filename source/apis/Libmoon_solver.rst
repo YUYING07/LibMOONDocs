@@ -48,11 +48,12 @@ libmoon.solver
     Base: ``GradBaseSolver``
 
     MOO-SVGDSolver, published in:
-    `”Profiling Pareto Front With Multi-Objective Stein Variational Gradient Descent“ <https://openreview.net/pdf?id=S2-j0ZegyrE>`_
+    `"Profiling Pareto Front With Multi-Objective Stein Variational Gradient Descent" <https://openreview.net/pdf?id=S2-j0ZegyrE>`_
+
     .. py:method:: solve(self, x, prefs, problem, n_prob, n_obj)
+
         :param int n_obj: The number of objectives.
         :param float n_prob: The number of problems.
-
 
 
 .. py:class::  MGDAUBSolver
@@ -65,7 +66,6 @@ libmoon.solver
     2. `"Multi-task learning as multimnist-objective optimization." <https://arxiv.org/abs/1810.04650>`_
 
     .. py:method:: solve(self, x, prefs, problem, n_prob, n_obj)
-
 
 
 .. py:class::  PMGDASolver

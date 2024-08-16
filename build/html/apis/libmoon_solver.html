@@ -78,6 +78,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#EPOSolver.solve"><code class="docutils literal notranslate"><span class="pre">EPOSolver.solve()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#solve"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#MGDAUBSolver"><code class="docutils literal notranslate"><span class="pre">MGDAUBSolver</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#MGDAUBSolver.solve"><code class="docutils literal notranslate"><span class="pre">MGDAUBSolver.solve()</span></code></a></li>
 </ul>
@@ -203,18 +204,20 @@
 <span class="sig-name descname"><span class="pre">MOO-SVGDSolver</span></span></dt>
 <dd><p>Base: <code class="docutils literal notranslate"><span class="pre">GradBaseSolver</span></code></p>
 <p>MOO-SVGDSolver, published in:
-<a class="reference external" href="https://openreview.net/pdf?id=S2-j0ZegyrE">”Profiling Pareto Front With Multi-Objective Stein Variational Gradient Descent“</a>
-.. py:method:: solve(self, x, prefs, problem, n_prob, n_obj)</p>
-<blockquote>
-<div><dl class="field-list simple">
-<dt class="field-odd">param int n_obj<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of objectives.</p>
-</dd>
-<dt class="field-even">param float n_prob<span class="colon">:</span></dt>
-<dd class="field-even"><p>The number of problems.</p>
+<a class="reference external" href="https://openreview.net/pdf?id=S2-j0ZegyrE">&quot;Profiling Pareto Front With Multi-Objective Stein Variational Gradient Descent&quot;</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#solve" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_obj</strong> (<em>int</em>) -- The number of objectives.</p></li>
+<li><p><strong>n_prob</strong> (<em>float</em>) -- The number of problems.</p></li>
+</ul>
 </dd>
 </dl>
-</div></blockquote>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
