@@ -48,7 +48,7 @@ libmoon.solver
     Base: ``GradBaseSolver``
 
     MOO-SVGDSolver, published in:
-    `Profiling Pareto Front With Multi-Objective Stein Variational Gradient Descent<https://openreview.net/pdf?id=S2-j0ZegyrE>`_
+    `”Profiling Pareto Front With Multi-Objective Stein Variational Gradient Descent“ <https://openreview.net/pdf?id=S2-j0ZegyrE>`_
     .. py:method:: solve(self, x, prefs, problem, n_prob, n_obj)
         :param int n_obj: The number of objectives.
         :param float n_prob: The number of problems.
@@ -61,8 +61,8 @@ libmoon.solver
 
     MGDAUBSolver, published in:
 
-    1. `"Multiple-gradient descent algorithm (MGDA) for multiobjective optimizationAlgorithme de descente à gradients multiples pour lʼoptimisation multiobjectif"<https://www.sciencedirect.com/science/article/pii/S1631073X12000738>`_
-    2. `"Multi-task learning as multimnist-objective optimization."<https://arxiv.org/abs/1810.04650>`_
+    1. `"Multiple-gradient descent algorithm (MGDA) for multiobjective optimizationAlgorithme de descente à gradients multiples pour lʼoptimisation multiobjectif" <https://www.sciencedirect.com/science/article/pii/S1631073X12000738>`_
+    2. `"Multi-task learning as multimnist-objective optimization." <https://arxiv.org/abs/1810.04650>`_
 
     .. py:method:: solve(self, x, prefs, problem, n_prob, n_obj)
 
@@ -74,7 +74,7 @@ libmoon.solver
 
     PMGDASolver, published in:
 
-    `"PMGDA: A Preference-based Multiple Gradient Descent Algorithm."<https://arxiv.org/abs/2402.09492>`_
+    `"PMGDA: A Preference-based Multiple Gradient Descent Algorithm." <https://arxiv.org/abs/2402.09492>`_
 
     .. py:method:: solve(self, x, prefs)
 
