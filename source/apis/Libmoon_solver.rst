@@ -2,6 +2,9 @@
 libmoon.solver
 ================
 
+GradBaseSolver
+================
+
 
 .. py:class:: GradBaseSolver
 

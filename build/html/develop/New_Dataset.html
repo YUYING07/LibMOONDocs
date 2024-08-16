@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Customize an Architecture" href="CustomArchitecture.html" />
-    <link rel="prev" title="Run a Benchmark" href="../guide/Benchmark.html" /> 
+    <link rel="prev" title="Overall Framework" href="../guide/Framework.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,7 +54,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Task.html">What is Multi-Objective Optimization?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Framework.html">Overall Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guide/Benchmark.html">Run a Benchmark</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">DEVELOPER GUIDE:</span></p>
 <ul class="current">
@@ -84,7 +83,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Apply to a New Dataset</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/develop/New_Dataset.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/develop/new_dataset.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -94,13 +93,61 @@
              
   <section id="apply-to-a-new-dataset">
 <h1>Apply to a New Dataset<a class="headerlink" href="#apply-to-a-new-dataset" title="Link to this heading"></a></h1>
+<p>In this notebook, we will guide you add your own dataset to use the <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code>.</p>
+<p>Firstily we need to create a new dataset class, which should inherit from the <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code> class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">libmoon.problem.synthetic.mop</span> <span class="kn">import</span> <span class="n">BaseMOP</span>
+
+<span class="k">class</span> <span class="nc">F1</span><span class="p">(</span><span class="n">BaseMOP</span><span class="p">):</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">n_var</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+             <span class="n">n_obj</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+             <span class="n">lbound</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+             <span class="n">ubound</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+             <span class="n">n_cons</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+             <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">n_dim</span> <span class="o">=</span> <span class="n">n_var</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">n_obj</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lbound</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_var</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ubound</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_var</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then we can implement the <code class="docutils literal notranslate"><span class="pre">_evaluate_torch</span></code> method, which is used to evaluate the objective values of the dataset.
+We can also implement the <code class="docutils literal notranslate"><span class="pre">_evaluate_numpy</span></code> method, which is implemented using numpy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_evaluate_torch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">sum1</span> <span class="o">=</span> <span class="n">sum2</span> <span class="o">=</span>  <span class="mf">0.0</span>
+    <span class="n">count1</span> <span class="o">=</span> <span class="n">count2</span> <span class="o">=</span>  <span class="mf">0.0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">yi</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">yi</span> <span class="o">=</span> <span class="n">yi</span> <span class="o">*</span> <span class="n">yi</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">sum2</span> <span class="o">=</span> <span class="n">sum2</span> <span class="o">+</span> <span class="n">yi</span>
+            <span class="n">count2</span> <span class="o">=</span> <span class="n">count2</span> <span class="o">+</span> <span class="mf">1.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sum1</span> <span class="o">=</span> <span class="n">sum1</span> <span class="o">+</span> <span class="n">yi</span>
+            <span class="n">count1</span> <span class="o">=</span> <span class="n">count1</span> <span class="o">+</span> <span class="mf">1.0</span>
+
+    <span class="n">f1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">count1</span>  <span class="o">*</span> <span class="n">sum1</span> <span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">f2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">count2</span> <span class="o">*</span> <span class="n">sum2</span> <span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">count2</span> <span class="o">*</span> <span class="n">sum2</span> <span class="p">)))</span>
+
+    <span class="n">objs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="k">return</span> <span class="n">objs</span>
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../guide/Benchmark.html" class="btn btn-neutral float-left" title="Run a Benchmark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../guide/Framework.html" class="btn btn-neutral float-left" title="Overall Framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="CustomArchitecture.html" class="btn btn-neutral float-right" title="Customize an Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
