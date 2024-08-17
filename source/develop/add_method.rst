@@ -1,11 +1,11 @@
 =========================
-Customize an Architecture
+Apply to a New Method
 =========================
 
 
 This guide will show you how to add a new method to find a set of Pareto solutions.
 
-As we have mentioned in the main paper, specific multiobjective optimization can be written in the form of:
+As we have mentioned in the main paper, specific multi-objective optimization can be written in the form of:
 
 .. math::
         \begin{equation}

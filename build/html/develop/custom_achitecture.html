@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add an new Method &mdash; LibMOON v1 documentation</title>
+  <title>&lt;no title&gt; &mdash; LibMOON v1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -18,12 +18,9 @@
         <script src="../_static/documentation_options.js?v=b68717a0"></script>
         <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="libmoon.problem" href="../apis/Libmoon_problem.html" />
-    <link rel="prev" title="Apply to a New Dataset" href="new_dataset.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -58,9 +55,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../guide/benchmark.html">Run a Benchmark</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">DEVELOPER GUIDE:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="new_dataset.html">Apply to a New Dataset</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Add an new Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add_method.html">Apply to a New Method</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API REFERENCE:</span></p>
 <ul>
@@ -83,9 +80,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Add an new Method</li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/develop/CustomArchitecture.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/develop/custom_achitecture.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -93,39 +90,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="add-an-new-method">
-<h1>Add an new Method<a class="headerlink" href="#add-an-new-method" title="Link to this heading"></a></h1>
-<p>This guide will show you how to add a new method to find a set of Pareto solutions.</p>
-<p>As we have mentioned in the main paper, specific multi-objective optimization can be written in the form of:</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-\tilde{g}(L(\theta)) = \sum_{i=1}^m \tilde{\alpha}_i \cdot L_i(\theta).
-\end{equation}\]</div>
-<p>Here, the difference for different methods is how to calculate the coefficients <span class="math notranslate nohighlight">\(\tilde{\alpha}_i\)</span>.</p>
-<p>We firstly provide an example of using random weights ( by set the <code class="docutils literal notranslate"><span class="pre">get_weight_func()</span></code> function ), and use initial params <code class="docutils literal notranslate"><span class="pre">n_obj=2,</span> <span class="pre">n_prob=10,</span> <span class="pre">n_var=10</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_weight_func</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n_prob</span><span class="p">,</span> <span class="n">n_obj</span><span class="p">))</span>
-
-<span class="k">class</span> <span class="nc">RandomSolver</span><span class="p">(</span><span class="n">GradBaseSolver</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step_size</span><span class="p">,</span> <span class="n">n_iter</span><span class="p">,</span> <span class="n">tol</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">step_size</span> <span class="o">=</span> <span class="n">step_size</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">n_iter</span> <span class="o">=</span> <span class="n">n_iter</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tol</span> <span class="o">=</span> <span class="n">tol</span>
-
-    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">problem</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">prefs</span><span class="p">):</span>
-    <span class="c1"># The base solver uses get_weight_func() to specify weights</span>
-    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">prefs</span><span class="p">,</span> <span class="n">get_weight_func</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-
+  
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="new_dataset.html" class="btn btn-neutral float-left" title="Apply to a New Dataset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../apis/Libmoon_problem.html" class="btn btn-neutral float-right" title="libmoon.problem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
