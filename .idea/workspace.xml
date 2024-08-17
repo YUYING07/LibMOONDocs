@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/source/guide/benchmark.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/develop/CustomArchitecture.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/develop/CustomArchitecture.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/develop/CustomArchitecture.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/guide/Benchmark.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/guide/Benchmark.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/_sources/develop/CustomArchitecture.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/develop/CustomArchitecture.md.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/develop/CustomArchitecture.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/develop/CustomArchitecture.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/guide/Benchmark.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/guide/Benchmark.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/index.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/start/Quick_start.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/start/Quick_start.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/develop/CustomArchitecture.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +70,7 @@
       <workItem from="1723532377650" duration="17760000" />
       <workItem from="1723621492588" duration="9370000" />
       <workItem from="1723730962933" duration="19560000" />
-      <workItem from="1723870349754" duration="276000" />
+      <workItem from="1723870349754" duration="1381000" />
     </task>
     <servers />
   </component>
