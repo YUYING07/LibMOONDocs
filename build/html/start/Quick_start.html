@@ -57,11 +57,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Task.html">What is Multi-Objective Optimization?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Framework.html">Overall Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guide/Benchmark.html">Run a Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/benchmark.html">Run a Benchmark</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">DEVELOPER GUIDE:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../develop/New_Dataset.html">Apply to a New Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/new_dataset.html">Apply to a New Dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../develop/CustomArchitecture.html">Customize an Architecture</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API REFERENCE:</span></p>
@@ -126,20 +126,6 @@
 <span class="n">prefs</span> <span class="o">=</span> <span class="n">uniform_pref</span><span class="p">(</span><span class="n">n_prob</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_obj</span><span class="o">=</span><span class="n">problem</span><span class="o">.</span><span class="n">n_obj</span><span class="p">,</span> <span class="n">clip_eps</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
 <span class="n">solver</span> <span class="o">=</span> <span class="n">EPOSolver</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">synthetic_init</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">prefs</span><span class="p">),</span> <span class="n">prefs</span><span class="o">=</span><span class="n">prefs</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Example2: PSL in a problem with three lines of solving problem and two lines of evaluating the results.</p>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">libmoon.solver.psl.core_psl</span> <span class="kn">import</span> <span class="n">AggPSLSolver</span>
-
-<span class="n">problem</span> <span class="o">=</span> <span class="n">get_problem</span><span class="p">(</span><span class="n">problem_name</span><span class="o">=</span><span class="s1">&#39;ZDT1&#39;</span><span class="p">)</span>
-<span class="c1"># agg list [ ’ls ’, ’tche ’, ’mtche ’, ’pbi ’, ... ]</span>
-<span class="n">prefs</span> <span class="o">=</span> <span class="n">uniform_pref</span><span class="p">(</span><span class="n">n_prob</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_obj</span><span class="o">=</span><span class="n">problem</span><span class="o">.</span><span class="n">n_obj</span><span class="p">,</span> <span class="n">clip_eps</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
-<span class="n">solver</span> <span class="o">=</span> <span class="n">AggPSLSolver</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
-<span class="n">eval_y</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">Tensor</span><span class="p">(</span><span class="n">prefs</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()))</span>
 </pre></div>
 </div>
 </section>

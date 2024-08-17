@@ -21,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Apply to a New Dataset" href="../develop/New_Dataset.html" />
+    <link rel="next" title="Apply to a New Dataset" href="../develop/new_dataset.html" />
     <link rel="prev" title="Overall Framework" href="Framework.html" /> 
 </head>
 
@@ -54,11 +54,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Task.html">What is Multi-Objective Optimization?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Framework.html">Overall Framework</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Run a Benchmark</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run a Benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pareto-set-learning">Pareto-Set Learning</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">DEVELOPER GUIDE:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../develop/New_Dataset.html">Apply to a New Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/new_dataset.html">Apply to a New Dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../develop/CustomArchitecture.html">Customize an Architecture</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API REFERENCE:</span></p>
@@ -84,7 +87,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Run a Benchmark</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/guide/Benchmark.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/guide/benchmark.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -94,6 +97,25 @@
              
   <section id="run-a-benchmark">
 <h1>Run a Benchmark<a class="headerlink" href="#run-a-benchmark" title="Link to this heading"></a></h1>
+<section id="pareto-set-learning">
+<h2>Pareto-Set Learning<a class="headerlink" href="#pareto-set-learning" title="Link to this heading"></a></h2>
+<p>It is a learning-based approach that aims to learn the Pareto set of a given problem.</p>
+<p>In this notebook, we will guide you through the basic steps of using <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PSL in a problem with three lines of solving problem and two lines of evaluating the results.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">libmoon.solver.psl.core_psl</span> <span class="kn">import</span> <span class="n">AggPSLSolver</span>
+
+<span class="n">problem</span> <span class="o">=</span> <span class="n">get_problem</span><span class="p">(</span><span class="n">problem_name</span><span class="o">=</span><span class="s1">&#39;ZDT1&#39;</span><span class="p">)</span>
+<span class="c1"># agg list [ ’ls ’, ’tche ’, ’mtche ’, ’pbi ’, ... ]</span>
+<span class="n">prefs</span> <span class="o">=</span> <span class="n">uniform_pref</span><span class="p">(</span><span class="n">n_prob</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_obj</span><span class="o">=</span><span class="n">problem</span><span class="o">.</span><span class="n">n_obj</span><span class="p">,</span> <span class="n">clip_eps</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">AggPSLSolver</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">eval_y</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">Tensor</span><span class="p">(</span><span class="n">prefs</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()))</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -101,7 +123,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Framework.html" class="btn btn-neutral float-left" title="Overall Framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../develop/New_Dataset.html" class="btn btn-neutral float-right" title="Apply to a New Dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../develop/new_dataset.html" class="btn btn-neutral float-right" title="Apply to a New Dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

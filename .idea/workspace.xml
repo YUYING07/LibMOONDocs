@@ -5,26 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/source/develop/new_dataset.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/guide/benchmark.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/develop/New_Dataset.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/develop/New_Dataset.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/develop/CustomArchitecture.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/develop/CustomArchitecture.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/guide/Benchmark.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/guide/Benchmark.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/_sources/develop/New_Dataset.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/develop/New_Dataset.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/develop/CustomArchitecture.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/develop/CustomArchitecture.md.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/develop/New_Dataset.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/develop/New_Dataset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/develop/CustomArchitecture.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/develop/CustomArchitecture.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/guide/Benchmark.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/guide/Benchmark.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/develop/CustomArchitecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/develop/CustomArchitecture.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/develop/New_Dataset.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/start/Quick_start.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/start/Quick_start.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/pycharm/libmoon"
+    "last_opened_file_path": "D:/Documents/LibMOONDocs"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -81,7 +78,8 @@
       <updated>1723532376568</updated>
       <workItem from="1723532377650" duration="17760000" />
       <workItem from="1723621492588" duration="9370000" />
-      <workItem from="1723730962933" duration="18815000" />
+      <workItem from="1723730962933" duration="19560000" />
+      <workItem from="1723870349754" duration="276000" />
     </task>
     <servers />
   </component>

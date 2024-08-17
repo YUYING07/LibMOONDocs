@@ -43,17 +43,3 @@ Create an algorithm and a problem
     solver = EPOSolver(problem, step_size=1e-2, n_iter=1000, tol=1e-2)
     res = solver.solve(x=synthetic_init(problem, prefs), prefs=prefs)
 
-.. note::
-
-   Example2: PSL in a problem with three lines of solving problem and two lines of evaluating the results.
-
-.. code-block:: python
-
-    from libmoon.solver.psl.core_psl import AggPSLSolver
-
-    problem = get_problem(problem_name='ZDT1')
-    # agg list [ ’ls ’, ’tche ’, ’mtche ’, ’pbi ’, ... ]
-    prefs = uniform_pref(n_prob=100, n_obj=problem.n_obj, clip_eps=1e-2)
-    solver = AggPSLSolver(problem, agg='ls')
-    model = solver.solve()
-    eval_y = problem.evaluate(model(Tensor(prefs).cuda()))
