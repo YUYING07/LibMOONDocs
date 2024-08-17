@@ -1,10 +1,11 @@
 ================
 libmoon.metric
 ================
-Metrics can be divided into two parts, the first part measures the quality of a set of solutions :math:`\mathbb{S} = \{ y^{(1)}, \ldots, y^{(N)} \}`.
 
 Functions
 =========
+
+Metrics can be divided into two parts, the first part measures the quality of a set of solutions :math:`\mathbb{S} = \{ y^{(1)}, \ldots, y^{(N)} \}`.
 
 .. py:function:: compute_hv(solutions)
 

@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="libmoon.metric" href="Libmoon_metric.html" />
-    <link rel="prev" title="Customize an Architecture" href="../develop/CustomArchitecture.html" /> 
+    <link rel="prev" title="Customize an Architecture" href="../develop/custom_architecture.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,11 +54,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Task.html">What is Multi-Objective Optimization?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide/Framework.html">Overall Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/benchmark.html">Run a Benchmark</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">DEVELOPER GUIDE:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../develop/New_Dataset.html">Apply to a New Dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/CustomArchitecture.html">Customize an Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/new_dataset.html">Apply to a New Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/add_method.html">Apply to a New Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/custom_architecture.html">Customize an Architecture</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API REFERENCE:</span></p>
 <ul class="current">
@@ -340,11 +342,11 @@
 </section>
 <section id="dtlz">
 <h2>DTLZ<a class="headerlink" href="#dtlz" title="Link to this heading"></a></h2>
+<p>Synthetic DTLZ dataset from <a class="reference external" href="https://link.springer.com/chapter/10.1007/1-84628-137-7_6">&quot;Scalable test problems for evolutionary multiobjectiveoptimization, Evolutionary multiobjective Optimization.&quot;</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="DTLZ1">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DTLZ1</span></span><a class="headerlink" href="#DTLZ1" title="Link to this definition"></a></dt>
 <dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
-<p>Synthetic DTLZ dataset from <a class="reference external" href="https://link.springer.com/chapter/10.1007/1-84628-137-7_6">&quot;Scalable test problems for evolutionary multiobjectiveoptimization, Evolutionary multiobjective Optimization.&quot;</a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="DTLZ1.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(30)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DTLZ1.__init__" title="Link to this definition"></a></dt>
@@ -422,11 +424,11 @@
 </section>
 <section id="maf1">
 <h2>MAF1<a class="headerlink" href="#maf1" title="Link to this heading"></a></h2>
+<p>Synthetic MAF1 dataset from <a class="reference external" href="https://colab.ws/articles/10.1007%2Fs40747-017-0039-7">&quot;A benchmark test suite for evolutionary many-objective optimization.&quot;</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="MAF1">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MAF1</span></span><a class="headerlink" href="#MAF1" title="Link to this definition"></a></dt>
 <dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
-<p>Synthetic MAF1 dataset from <a class="reference external" href="https://colab.ws/articles/10.1007%2Fs40747-017-0039-7">&quot;A benchmark test suite for evolutionary many-objective optimization.&quot;</a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="MAF1.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(30)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MAF1.__init__" title="Link to this definition"></a></dt>
@@ -448,11 +450,11 @@
 </section>
 <section id="re">
 <h2>RE<a class="headerlink" href="#re" title="Link to this heading"></a></h2>
+<p>Synthetic RE dataset from <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1568494620300181">&quot;An easy-to-use real-world multi-objective optimization problem suite.&quot;</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="RE21">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RE21</span></span><a class="headerlink" href="#RE21" title="Link to this definition"></a></dt>
 <dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
-<p>Synthetic RE dataset from <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1568494620300181">&quot;An easy-to-use real-world multi-objective optimization problem suite.&quot;</a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="RE21.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.zeros(4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.ones(4)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RE21.__init__" title="Link to this definition"></a></dt>
@@ -650,11 +652,11 @@
 </section>
 <section id="vlmop">
 <h2>VLMOP<a class="headerlink" href="#vlmop" title="Link to this heading"></a></h2>
+<p>Synthetic VLMOP dataset from <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-642-59132-7_26">&quot;Distributed Multiobjective Optimization Problems and Methods for their Solution.&quot;</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="VLMOP1">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VLMOP1</span></span><a class="headerlink" href="#VLMOP1" title="Link to this definition"></a></dt>
 <dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
-<p>Synthetic VLMOP dataset from <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-642-59132-7_26">&quot;Distributed Multiobjective Optimization Problems and Methods for their Solution.&quot;</a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="VLMOP1.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(10)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#VLMOP1.__init__" title="Link to this definition"></a></dt>
@@ -680,8 +682,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="VLMOP2.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(10)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#VLMOP2.__init__" title="Link to this definition"></a></dt>
-<dd><p>Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="VLMOP2._evaluate_torch">
@@ -698,11 +699,11 @@
 </section>
 <section id="zdt">
 <h2>ZDT<a class="headerlink" href="#zdt" title="Link to this heading"></a></h2>
+<p>Synthetic ZDT dataset from <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1568494620300181">&quot;An easy-to-use real-world multi-objective optimization problem suite&quot;</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ZDT1">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZDT1</span></span><a class="headerlink" href="#ZDT1" title="Link to this definition"></a></dt>
 <dd><p>Base: <code class="docutils literal notranslate"><span class="pre">BaseMOP</span></code></p>
-<p>Synthetic ZDT dataset from <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1568494620300181">&quot;An easy-to-use real-world multi-objective optimization problem suite&quot;</a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ZDT1.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_var=30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_obj=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lbound=np.zeros(30)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ubound=np.ones(30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ZDT1.__init__" title="Link to this definition"></a></dt>
@@ -811,7 +812,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../develop/CustomArchitecture.html" class="btn btn-neutral float-left" title="Customize an Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../develop/custom_architecture.html" class="btn btn-neutral float-left" title="Customize an Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="Libmoon_metric.html" class="btn btn-neutral float-right" title="libmoon.metric" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

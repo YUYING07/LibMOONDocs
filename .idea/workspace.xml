@@ -5,20 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/source/develop/custom_architecture.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/develop/CustomArchitecture.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/develop/CustomArchitecture.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_metric.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_metric.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_problem.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_problem.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/_sources/develop/CustomArchitecture.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/develop/CustomArchitecture.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_metric.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_metric.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_problem.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_problem.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/index.rst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/develop/CustomArchitecture.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/develop/CustomArchitecture.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_metric.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_metric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_problem.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_problem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/develop/CustomArchitecture.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/develop/add_method.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_metric.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_metric.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_problem.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_problem.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/index.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +81,7 @@
       <workItem from="1723532377650" duration="17760000" />
       <workItem from="1723621492588" duration="9370000" />
       <workItem from="1723730962933" duration="19560000" />
-      <workItem from="1723870349754" duration="1923000" />
+      <workItem from="1723870349754" duration="3111000" />
     </task>
     <servers />
   </component>

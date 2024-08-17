@@ -2,6 +2,7 @@
 libmoon.problem
 ================
 
+
 BaseMOP
 =======
 
@@ -47,13 +48,13 @@ BaseMOP
         :rtype: ndarray
 
 DTLZ
-=====
+====
+
+Synthetic DTLZ dataset from `"Scalable test problems for evolutionary multiobjectiveoptimization, Evolutionary multiobjective Optimization." <https://link.springer.com/chapter/10.1007/1-84628-137-7_6>`_
 
 .. py:class:: DTLZ1
 
     Base: ``BaseMOP``
-
-    Synthetic DTLZ dataset from `"Scalable test problems for evolutionary multiobjectiveoptimization, Evolutionary multiobjective Optimization." <https://link.springer.com/chapter/10.1007/1-84628-137-7_6>`_
 
     .. py:method:: __init__(self, n_var=30, n_obj=3, lbound=np.zeros(30), ubound=np.ones(30))
 
@@ -105,15 +106,15 @@ DTLZ
 
     .. py:method:: _evaluate_numpy(self, x)
 
-
 MAF1
-=====
+====
+
+Synthetic MAF1 dataset from `"A benchmark test suite for evolutionary many-objective optimization." <https://colab.ws/articles/10.1007%2Fs40747-017-0039-7>`_
 
 .. py:class:: MAF1
 
     Base: ``BaseMOP``
 
-    Synthetic MAF1 dataset from `"A benchmark test suite for evolutionary many-objective optimization." <https://colab.ws/articles/10.1007%2Fs40747-017-0039-7>`_
 
     .. py:method:: __init__(self, n_var=30, n_obj=3, lbound=np.zeros(30), ubound=np.ones(30))
 
@@ -124,15 +125,14 @@ MAF1
 
     .. py:method:: _evaluate_numpy(self, x)
 
-
 RE
 ==
+
+Synthetic RE dataset from `"An easy-to-use real-world multi-objective optimization problem suite." <https://www.sciencedirect.com/science/article/pii/S1568494620300181>`_
 
 .. py:class:: RE21
 
     Base: ``BaseMOP``
-
-    Synthetic RE dataset from `"An easy-to-use real-world multi-objective optimization problem suite." <https://www.sciencedirect.com/science/article/pii/S1568494620300181>`_
 
     .. py:method:: __init__(self, n_var=4, n_obj=2, lbound=np.zeros(4), ubound=np.ones(4))
 
@@ -251,15 +251,15 @@ RE
 
     .. py:method:: _evaluate_numpy(self, x)
 
-
 VLMOP
 =====
+
+Synthetic VLMOP dataset from `"Distributed Multiobjective Optimization Problems and Methods for their Solution." <https://link.springer.com/chapter/10.1007/978-3-642-59132-7_26>`_
 
 .. py:class:: VLMOP1
 
     Base: ``BaseMOP``
 
-    Synthetic VLMOP dataset from `"Distributed Multiobjective Optimization Problems and Methods for their Solution." <https://link.springer.com/chapter/10.1007/978-3-642-59132-7_26>`_
 
     .. py:method:: __init__(self, n_var=10, n_obj=2, lbound=np.zeros(10), ubound=np.ones(10)
 
@@ -276,20 +276,19 @@ VLMOP
 
     .. py:method:: __init__(self, n_var=10, n_obj=2, lbound=np.zeros(10), ubound=np.ones(10)
 
-       Volkovich et al. Distributed Multiobjective Optimization Problems and Methods for their Solution.1997
-
     .. py:method:: _evaluate_torch(self, x)
 
     .. py:method:: _evaluate_numpy(self, x)
 
 ZDT
-====
+===
+
+
+Synthetic ZDT dataset from `"An easy-to-use real-world multi-objective optimization problem suite" <https://www.sciencedirect.com/science/article/pii/S1568494620300181>`_
 
 .. py:class:: ZDT1
 
     Base: ``BaseMOP``
-
-    Synthetic ZDT dataset from `"An easy-to-use real-world multi-objective optimization problem suite" <https://www.sciencedirect.com/science/article/pii/S1568494620300181>`_
 
     .. py:method:: __init__(self, n_var=30, n_obj=2, lbound=np.zeros(30), ubound=np.ones(30)
 

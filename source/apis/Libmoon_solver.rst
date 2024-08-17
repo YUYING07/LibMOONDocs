@@ -3,8 +3,7 @@ libmoon.solver
 ================
 
 GradBaseSolver
-================
-
+==============
 
 .. py:class:: GradBaseSolver
 
@@ -33,6 +32,7 @@ GradBaseSolver
         :param str agg_fun: agg_fun from ls, mtche, tche, pbi, cosmos, invagg, softtche, softmtche
 
     .. py:method:: solve(self, x, prefs)
+
 
 .. py:class::  EPOSolver
 
