@@ -5,26 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/source/start/Introduction.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/apis/libmoon_metric.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/apis/libmoon_metric.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/apis/libmoon_problem.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/apis/libmoon_problem.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/apis/libmoon_solver.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/apis/libmoon_solver.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/develop/New_Dataset.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/develop/New_Dataset.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/guide/Benchmark.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/guide/Benchmark.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/index.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/start/Introduction.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/start/Introduction.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/doctrees/start/Quick_start.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/doctrees/start/Quick_start.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/develop/custom_architecture.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/develop/custom_architecture.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/start/Introduction.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/start/Introduction.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/develop/New_Dataset.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/develop/New_Dataset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/develop/add_method.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/develop/add_method.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/guide/Benchmark.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/guide/Benchmark.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/develop/custom_architecture.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/develop/custom_architecture.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/develop/custom_architecture.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/develop/custom_architecture.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/start/Introduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/start/Introduction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/html/start/Quick_start.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/start/Quick_start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/start/Introduction.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/develop/custom_architecture.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/develop/custom_architecture.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +62,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
+        <option value="bundled-python-sdk-8336bb23522e-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.19072.16" />
       </set>
     </attachedChunks>
   </component>
@@ -83,7 +78,8 @@
       <workItem from="1723621492588" duration="9370000" />
       <workItem from="1723730962933" duration="19560000" />
       <workItem from="1723870349754" duration="4869000" />
-      <workItem from="1724037046892" duration="5884000" />
+      <workItem from="1724037046892" duration="5922000" />
+      <workItem from="1724656104707" duration="628000" />
     </task>
     <servers />
   </component>

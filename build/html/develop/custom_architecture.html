@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Customize an Architecture &mdash; LibMOON v1 documentation</title>
+  <title>Adding a New Architecture &mdash; LibMOON v1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -60,7 +60,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="new_dataset.html">Apply to a New Dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="add_method.html">Apply to a New Method</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Customize an Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Adding a New Architecture</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API REFERENCE:</span></p>
 <ul>
@@ -83,7 +83,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Customize an Architecture</li>
+      <li class="breadcrumb-item active">Adding a New Architecture</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/develop/custom_architecture.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -93,8 +93,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="customize-an-architecture">
-<h1>Customize an Architecture<a class="headerlink" href="#customize-an-architecture" title="Link to this heading"></a></h1>
+  <section id="adding-a-new-architecture">
+<h1>Adding a New Architecture<a class="headerlink" href="#adding-a-new-architecture" title="Link to this heading"></a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimplePSLLoRAModel</span><span class="p">(</span><span class="n">SimplePSLModel</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_obj</span><span class="p">,</span> <span class="n">n_var</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">n_obj</span><span class="p">,</span> <span class="n">n_var</span><span class="p">)</span>
+        <span class="c1">#n_obj (int): Number of objectives.</span>
+        <span class="c1">#n_var (int): Number of variables.</span>
+        <span class="c1">#lr (float, optional): Learning rate. Default is `1e-3`.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">lr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">n_obj</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">n_var</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefs</span><span class="p">):</span>
+        <span class="c1"># Input: prefs (Tensor): Preference matrix of shape `(n_prob, n_obj)`.</span>
+        <span class="c1"># Output: solution (Tensor): Solution matrix of shape `(n_prob, n_var)`.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">prefs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">problem</span><span class="p">,</span> <span class="n">epoch</span><span class="p">):</span>
+        <span class="c1"># problem (ProblemClass): The problem class instance to optimize.</span>
+        <span class="c1"># epoch (int): Number of epochs for optimization.</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lr</span><span class="p">)</span>
+        <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">prefs</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">prefs</span><span class="p">)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefs</span><span class="p">):</span>
+        <span class="c1"># Input: prefs (Tensor): Preference matrix of shape `(n_prob, n_obj)`.</span>
+        <span class="c1">#Output: decision_variables (Tensor): Decision variables of shape `(n_prob, n_var)`.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">prefs</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 
 

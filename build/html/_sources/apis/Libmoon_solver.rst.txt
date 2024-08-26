@@ -92,3 +92,6 @@ GradBaseSolver
     Base: ``GradBaseSolver``
 
     .. py:method:: solve(self, x, prefs, problem, n_prob, n_obj)
+
+SimplePSLSolver
+===============
