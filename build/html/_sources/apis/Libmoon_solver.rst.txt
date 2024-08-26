@@ -7,7 +7,7 @@ GradBaseSolver
 
 .. py:class:: GradBaseSolver
 
-    Base: object
+    Base: ``object``
 
     All gradient solvers should implement the methods in the base class ``GradBaseSolver``
 
@@ -93,5 +93,39 @@ GradBaseSolver
 
     .. py:method:: solve(self, x, prefs, problem, n_prob, n_obj)
 
+
 SimplePSLSolver
 ===============
+
+.. py:class:: SimplePSLSolver
+
+    Base: ``object``
+
+    All pareto set learning solvers should implement the methods in the base class ``SimplePSLSolver``
+
+    .. py:method:: __init__(self, n_obj, n_var, lr=1e-3)
+
+        :param int n_obj: Number of objectives.
+        :param int n_var: Number of variables.
+        :param float lr: Learning rate. Default is ``1e-3``.
+
+    .. py:method:: forward(self, prefs)
+
+        :param ndarray (n_prob, n_obj) prefs: The preference matrix.
+        :return: The ``solution`` matrix of shape ``(n_prob, n_var)``.
+
+    .. py:method:: optimize(self, problem, epoch)
+
+        :param ProblemClass problem: The problem class instance to optimize.
+        :param int epoch: Number of epochs for optimization.
+
+    .. py:method:: evaluate(self, prefs)
+
+            :param ndarray (n_prob, n_obj) prefs: The preference matrix.
+            :return: The ``decision_variables`` matrix of shape ``(n_prob, n_var)``.
+
+.. py:class:: SimplePSLLoRAModel
+
+        Base: ``SimplePSLModel``
+
+
