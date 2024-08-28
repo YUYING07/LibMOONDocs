@@ -37,3 +37,31 @@ Contor of aggregation functions
     :figwidth: 250px
     :align: left
     :figclass: Fig5
+
+
+.. _fig-softtche:
+.. figure:: ../img/aggs/softtche.png
+    :figwidth: 250px
+    :align: left
+    :figclass: Fig6
+
+
+.. _fig-softmtche:
+.. figure:: ../img/aggs/softmtche.png
+    :figwidth: 250px
+    :align: left
+    :figclass: Fig7
+
+
+.. _fig-pnorm:
+.. figure:: ../img/aggs/pnorm.png
+    :figwidth: 250px
+    :align: left
+    :figclass: Fig8
+
+
+.. _fig-aasf:
+.. figure:: ../img/aggs/aasf.png
+    :figwidth: 250px
+    :align: left
+    :figclass: Fig9
