@@ -7,7 +7,7 @@ To install `LibMOON`, we recommend to use the following libraries:
 ## User Installation
 - Create an environment`
 ```
-    conde create -n libmoon python=3.11.9
+    conda create -n libmoon python=3.11.9
     conda activate libmoon
     pip install libmoon==0.1.11    
 ```
