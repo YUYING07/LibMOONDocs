@@ -108,12 +108,12 @@ If you find ``LibMOON`` useful for your research or development, please cite the
 
 .. code-block:: python
 
-    @software{libmoon_2024,
-        author = {Zhang, Xiaoyuan and Zhao, Liang and Yu, Yingying and Lin, Xi and Chen, Yifan and Zhao, Han and Zhang, Qingfu},
-        title = {{LibMOON: A Gradient-based MultiObjective OptimizatioN Library in PyTorch}},
-        url = {https://github.com/xzhang2523/libmoon},
-        version = {2.0.4},
-        year = {2024}
+    @article{xzhang2024libmoon,
+      title={LibMOON: A Gradient-based MultiObjective OptimizatioN Library in PyTorch},
+      author={Xiaoyuan Zhang and Liang Zhao and Yingying Yu and Xi Lin and Zhenkun Wang and Yifan Chen and Han Zhao and Qingfu Zhang},
+      journal={arXiv preprint arXiv:2409.02969},
+      year={2024},
+      url={https://arxiv.org/abs/2409.02969}
     }
 
 
