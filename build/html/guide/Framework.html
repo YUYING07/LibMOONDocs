@@ -68,6 +68,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../apis/Libmoon_metric.html">libmoon.metric</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apis/Libmoon_solver.html">libmoon.solver</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">GALLERY:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/aggfuns.html">Contor of aggregation functions</a></li>
+</ul>
 
         </div>
       </div>
@@ -85,7 +89,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Overall Framework</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/guide/Framework.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/guide/Framework.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -95,6 +99,22 @@
              
   <section id="overall-framework">
 <h1>Overall Framework<a class="headerlink" href="#overall-framework" title="Link to this heading"></a></h1>
+<p><a class="reference internal" href="#fig-framework"><span class="std std-numref">Fig. 2</span></a> demonstrates the framework of the proposed <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> library. <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> supports three categories of solvers: MOO solvers aiming to find a finite set of Pareto solutions satisfying certain requirements, PSL solvers aiming to learn whole PS with a single mode, and MOBO solvers aiming to solve expensive problems.</p>
+<p>Each solver category is designed highly modulized and new solvers are easy to plugin <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> by rewriting only a small portion of code, e.g.,
+the way of gradient manipulation. MOO and PSL solvers support all synthetic, MTL, and realworld (RE) problems,
+while MOBO solvers support synthetic and RE problems.</p>
+<figure class="figure1 align-center" id="id1" style="width: 600px">
+<span id="fig-framework"></span><img alt="../_images/LibMOON.png" src="../_images/LibMOON.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The Framework of <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code>: <code class="docutils literal notranslate"><span class="pre">LibMOON</span></code> addresses synthetic, real-world and MTL problems with three categories of solvers: MOO, PSL, and MOBO solvers.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The overall framework consists of three modules as introduced below.</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="../apis/Libmoon_problem.html#problem-ref"><span class="std std-ref">libmoon.problem</span></a> includes all supported problems.</p></li>
+<li><p>The <a class="reference internal" href="../apis/Libmoon_metric.html#metric-ref"><span class="std std-ref">libmoon.metric</span></a> supports the following metrics: (1) hypervolume (HV), (2) inverted general distance (IGD), (3) fill distance (FD), (4) minimal distance (lmin), (5) smooth minimal distance (slmin), (6) Spacing, (7) Span, (8) penalty-based intersection (PBI), (9) inner product (IP), and (10) cross angle (ϑ).</p></li>
+<li><p>The <a class="reference internal" href="../apis/Libmoon_solver.html#solver-ref"><span class="std std-ref">libmoon.solver</span></a> includes all supported solvers.</p></li>
+</ul>
 </section>
 
 

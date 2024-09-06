@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="" />
+    <list default="true" id="14b5a667-4ea2-43e7-8c0f-1667ff0f8ae3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/source/guide/Framework.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/img/LibMOON.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_metric.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_metric.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_problem.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_problem.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/apis/libmoon_solver.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/.doctrees/guide/Framework.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/.doctrees/guide/Framework.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_metric.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_metric.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_problem.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_problem.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/_sources/apis/Libmoon_solver.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_metric.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_metric.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_problem.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_problem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/apis/libmoon_solver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/guide/Framework.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/guide/Framework.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_metric.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_metric.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_problem.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_problem.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" beforeDir="false" afterPath="$PROJECT_DIR$/source/apis/Libmoon_solver.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/guide/Framework.md" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,14 +43,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Documents/LibMOONDocs"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/LibMOONDocs&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\LibMOONDocs\source\apis" />
@@ -36,11 +58,11 @@
       <recent name="D:\Documents\LibMOONDocs\source" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\LibMOONDocs\source\img" />
       <recent name="D:\Documents\LibMOONDocs\source\img\aggs" />
       <recent name="D:\Documents\LibMOONDocs\source\guide" />
       <recent name="D:\Documents\LibMOONDocs\source" />
       <recent name="D:\Documents\LibMOONDocs" />
-      <recent name="D:\Documents\LibMOONDocs\source\img" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -65,6 +87,7 @@
       <workItem from="1724037046892" duration="5922000" />
       <workItem from="1724656104707" duration="2092000" />
       <workItem from="1724826644680" duration="2044000" />
+      <workItem from="1725607169236" duration="4831000" />
     </task>
     <servers />
   </component>

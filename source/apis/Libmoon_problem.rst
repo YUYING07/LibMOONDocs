@@ -1,3 +1,4 @@
+.. _problem-ref:
 ================
 libmoon.problem
 ================
