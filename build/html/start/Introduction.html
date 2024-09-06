@@ -77,6 +77,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../apis/Libmoon_metric.html">libmoon.metric</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apis/Libmoon_solver.html">libmoon.solver</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">GALLERY:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/aggfuns.html">Contor of aggregation functions</a></li>
+</ul>
 
         </div>
       </div>
@@ -146,6 +150,10 @@ algorithms.</p>
 <tr class="row-even"><td><p><a class="reference external" href="https://proceedings.mlr.press/v119/xu20h/xu20h.pdf">Robotics (MO-MuJoCo...)</a></p></td>
 <td><p><a class="reference external" href="https://github.com/mit-gfx/PGMORL">Code</a></p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://arxiv.org/pdf/2009.12867">Real-world Multi-objective Optimization Problem Suite</a></p></td>
+<td><p>Real World</p></td>
+<td><p><a class="reference external" href="https://github.com/ryojitanabe/reproblems">Project</a></p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -164,24 +172,7 @@ algorithms.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td rowspan="2"><p>Aggregation fun. based, e.g. Tche,mTche,LS,PBI,...</p></td>
-<td rowspan="2"><p>Pareto solution with aggregations.</p></td>
-<td rowspan="2"><p>Any</p></td>
-<td rowspan="2"><p>Yes</p></td>
-<td rowspan="2"><p>Any</p></td>
-<td rowspan="2"></td>
-<td rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code></p></td>
-</tr>
-<tr class="row-odd"></tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://arxiv.org/pdf/2103.13392">COSMOS</a></p></td>
-<td><p>Approximated exact solution.</p></td>
-<td><p>Any</p></td>
-<td><p>Yes</p></td>
-<td><p>ICDM 2021</p></td>
-<td><p><span class="math notranslate nohighlight">\(O(m n K )\)</span></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://proceedings.mlr.press/v119/mahapatra20a/mahapatra20a.pdf">EPO</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://proceedings.mlr.press/v119/mahapatra20a/mahapatra20a.pdf">EPO</a></p></td>
 <td><p>Exact solution.</p></td>
 <td><p>Any</p></td>
 <td><p>Yes</p></td>
@@ -189,21 +180,29 @@ algorithms.</p>
 <td><p><span class="math notranslate nohighlight">\(O(m^2 n K)\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">EPOSolver</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://openreview.net/pdf?id=S2-j0ZegyrE">MO-SVGD</a></p></td>
-<td><p>A set of diverse Pareto solution.</p></td>
-<td><p>Any</p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://arxiv.org/abs/2102.04523">HVGrad</a></p></td>
+<td><p>It is a gradient-based HV method.</p></td>
+<td><p>2/3</p></td>
 <td><p>Yes</p></td>
-<td><p>NeurIPS 2021</p></td>
+<td><p>CEC2023</p></td>
 <td><p><span class="math notranslate nohighlight">\(O(m^2 n K^2)\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">MOO-SVGDSolver</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HVGradSolver</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://proceedings.neurips.cc/paper/2018/file/432aca3a1e345e339f35a30c8f65edce-Paper.pdf">MGDAUB</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://proceedings.neurips.cc/paper/2018/file/432aca3a1e345e339f35a30c8f65edce-Paper.pdf">MGDA-UB</a></p></td>
 <td><p>Arbitray Pareto solutions. Location affected highly by initialization.</p></td>
 <td><p>Any</p></td>
 <td><p>Yes</p></td>
 <td><p>NeurIPS 2018</p></td>
 <td><p><span class="math notranslate nohighlight">\(O(m^2 n K)\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">MGDAUBSolver</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://openreview.net/pdf?id=S2-j0ZegyrE">MOO-SVGD</a></p></td>
+<td><p>A set of diverse Pareto solution.</p></td>
+<td><p>Any</p></td>
+<td><p>Yes</p></td>
+<td><p>NeurIPS 2021</p></td>
+<td><p><span class="math notranslate nohighlight">\(O(m^2 n K^2)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MOO-SVGDSolver</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://arxiv.org/abs/2402.09492">PMGDA</a></p></td>
 <td><p>Pareto solutions satisfying any preference.</p></td>
@@ -224,13 +223,53 @@ algorithms.</p>
 <td><p><span class="math notranslate nohighlight">\(O(m^2 n K^2)\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">PMTLSolver</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://arxiv.org/abs/2102.04523">HVGrad</a></p></td>
-<td><p>It is a gradient-based HV method.</p></td>
-<td><p>2/3</p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://bayanbox.ir/view/2515773690068372592/Kaisa-Miettinen-Nonlinear-Multiobjective-Optimization.pdf">Agg-LS</a></p></td>
+<td><p>Pareto solution with aggregations.</p></td>
+<td><p>Any</p></td>
 <td><p>Yes</p></td>
-<td><p>CEC2023</p></td>
-<td><p><span class="math notranslate nohighlight">\(O(m^2 n K^2)\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">HVGradSolver</span></code></p></td>
+<td><p>Any</p></td>
+<td><p><span class="math notranslate nohighlight">\(O(m n K )\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/document/4358754">Agg-Tche</a></p></td>
+<td><p>Pareto solution with aggregations.</p></td>
+<td><p>Any</p></td>
+<td><p>Yes</p></td>
+<td><p>Any</p></td>
+<td><p><span class="math notranslate nohighlight">\(O(m n K )\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/document/7927726">Agg-mTche</a></p></td>
+<td><p>Pareto solution with aggregations.</p></td>
+<td><p>Any</p></td>
+<td><p>Yes</p></td>
+<td><p>Any</p></td>
+<td><p><span class="math notranslate nohighlight">\(O(m n K )\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://ieeexplore.ieee.org/document/4358754">Agg-PBI</a></p></td>
+<td><p>Pareto solution with aggregations.</p></td>
+<td><p>Any</p></td>
+<td><p>Yes</p></td>
+<td><p>Any</p></td>
+<td><p><span class="math notranslate nohighlight">\(O(m n K )\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://arxiv.org/pdf/2103.13392">Agg-COSMOS</a></p></td>
+<td><p>Approximated exact solution.</p></td>
+<td><p>Any</p></td>
+<td><p>Yes</p></td>
+<td><p>ICDM 2021</p></td>
+<td><p><span class="math notranslate nohighlight">\(O(m n K )\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://openreview.net/forum?id=m4dO5L6eCp">Agg-SmoothTche</a></p></td>
+<td><p>Pareto solution with aggregations.</p></td>
+<td><p>Any</p></td>
+<td><p>Yes</p></td>
+<td><p>Any</p></td>
+<td><p><span class="math notranslate nohighlight">\(O(m n K )\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -238,49 +277,48 @@ algorithms.</p>
 For neural network based methods, <span class="math notranslate nohighlight">\(n\)</span> is the number of parameters; hence <span class="math notranslate nohighlight">\(n\)</span> is very large (&gt;10000), <span class="math notranslate nohighlight">\(K\)</span> is also large (
 e.g., 20-50), while <span class="math notranslate nohighlight">\(m\)</span> is small (2.g., 2-4).
 As a result, <span class="math notranslate nohighlight">\(m^2\)</span> is not a big problem. <span class="math notranslate nohighlight">\(n^2\)</span> is a big problem. <span class="math notranslate nohighlight">\(K^2\)</span> is a big problem.</p>
-<p>Time complexity of gradient based methods are as follows,</p>
-<ol class="arabic simple">
-<li><p>Tier 1. <code class="docutils literal notranslate"><span class="pre">GradAggSolver</span></code>.</p></li>
-<li><p>Tier 2. <code class="docutils literal notranslate"><span class="pre">MGDASolver</span></code>, <code class="docutils literal notranslate"><span class="pre">EPOSolver</span></code>, <code class="docutils literal notranslate"><span class="pre">PMTLSolver</span></code>.</p></li>
-<li><p>Tier 3. <code class="docutils literal notranslate"><span class="pre">GradHVSolver</span></code></p></li>
-<li><p>Tier 4. <code class="docutils literal notranslate"><span class="pre">MOOSVGDSolver</span></code></p></li>
-</ol>
-<p>Important things to notice:
-The original code <code class="docutils literal notranslate"><span class="pre">MOO-SVGD</span></code> does not offer a MTL implement. Our code is the first open source code for MTL <code class="docutils literal notranslate"><span class="pre">MOO-SVGD</span></code>.</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
 <th class="head"><p>Problems</p></th>
+<th class="head"><p>Property</p></th>
 <th class="head"><p>Arguments</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td></td>
-<td rowspan="4"><p>Pareto set learning Solvers</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">EPO-based</span> <span class="pre">PSL</span></code></p></td>
+<tr class="row-even"><td><p>EPO-based PSL</p></td>
+<td rowspan="5"><p>Pareto set learning Solvers</p></td>
+<td><p>Exact solutions</p></td>
+<td rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">EPO-based</span> <span class="pre">PSL</span></code>
+----------------+----------
+<code class="docutils literal notranslate"><span class="pre">Agg-based</span> <span class="pre">PSL</span></code></p></td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Agg-based</span> <span class="pre">PSL</span></code></p></td>
+<tr class="row-odd"><td><p>Aggregation-based PSL</p></td>
+<td><p>Minimal aggregation function solutions</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-even"><td><p>PMGDA-based PSL</p></td>
+<td><p>Specific solutions</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">PMGDA-based</span> <span class="pre">PSL</span></code></p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-odd"><td><p>Evolutionary PSL</p></td>
+<td><p>Mitigate local minima by ES</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Evolutionary-based</span> <span class="pre">PSL</span></code></p></td>
 </tr>
-<tr class="row-even"><td></td>
-<td rowspan="3"><p>MultiObjective Bayesian Optimization  Solvers</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">PSL-MONO</span></code></p></td>
+<tr class="row-even"><td><p>LoRA PSL</p></td>
+<td colspan="2"><p>Light model structure                <a href="#id4"><span class="problematic" id="id5">|</span></a><code class="docutils literal notranslate"><span class="pre">LoRA-based</span> <span class="pre">psl</span></code></p></td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">PSL-DirHV-EI</span></code></p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">DirHV-EGO</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://arxiv.org/abs/2203.02185">HV Net</a></p></td>
-<td><p>Machine Learning Pretrained</p></td>
+<tr class="row-odd"><td><p>Tch-LCB</p></td>
+<td rowspan="3"><p>MultiObjective Bayesian Optimization Solvers</p></td>
 <td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Tch-LCB</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>DirHV-EI</p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DirHV-EI</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>DirHV-EGO</p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DirHV-EGO</span></code></p></td>
 </tr>
 </tbody>
 </table>
