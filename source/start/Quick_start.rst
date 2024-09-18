@@ -24,8 +24,8 @@ Create an algorithm and a problem
 
     Example1: Finding a size-K (K=5) Pareto solutions with four lines of code.
 
-
 .. code-block:: python
+
     # import necessary modules
     from libmoon.util.synthetic import synthetic_init
     from libmoon.util.prefs import uniform_pref
@@ -36,4 +36,3 @@ Create an algorithm and a problem
     prefs = get_uniform_pref(n_prob=5, n_obj=problem.n_obj, clip_eps=1e-2)
     solver = EPOSolver(step_size=1e-2, n_iter=1000, tol=1e-2, problem=problem, prefs=prefs)
     res = solver.solve(x=synthetic_init(problem, prefs))
-
