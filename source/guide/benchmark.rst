@@ -18,6 +18,8 @@ In this notebook, we will guide you through the basic steps of using ``LibMOON``
 .. code-block:: python
 
     from libmoon.solver.psl.core_psl import AggPSLSolver
+    from libmoon.prefs import uniform_pref
+    from libmoon.problems import get_problem
 
     problem = get_problem(problem_name='ZDT1')
     # agg list [ ’ls ’, ’tche ’, ’mtche ’, ’pbi ’, ... ]
