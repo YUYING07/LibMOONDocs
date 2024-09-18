@@ -17,13 +17,14 @@ In this notebook, we will guide you through the basic steps of using ``LibMOON``
 
 .. code-block:: python
 
-    from libmoon.solver.psl.core_psl import AggPSLSolver
-    from libmoon.prefs import uniform_pref
-    from libmoon.problems import get_problem
+    from libmoon.solver.psl.core_psl import BasePSLSolver
+    from libmoon.util import get_problem
+    from libmoon.util.prefs import get_uniform_pref
+    from torch import Tensor
 
     problem = get_problem(problem_name='ZDT1')
     # agg list [ ’ls ’, ’tche ’, ’mtche ’, ’pbi ’, ... ]
-    prefs = uniform_pref(n_prob=100, n_obj=problem.n_obj, clip_eps=1e-2)
-    solver = AggPSLSolver(problem, agg='ls')
-    model = solver.solve()
+    prefs = get_uniform_pref(n_prob=100, n_obj=problem.n_obj, clip_eps=1e-2)
+    solver = BasePSLSolver(problem, solver_name='agg_ls')
+    model, _ = solver.solve()
     eval_y = problem.evaluate(model(Tensor(prefs).cuda()))
